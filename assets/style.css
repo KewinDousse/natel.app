@@ -489,7 +489,7 @@ p:last-child { margin-bottom: 0; }
   vertical-align: -0.05em;
   background: var(--leader);
 }
-/* A separator would start a wrapped line, so narrow screens get a 2 by 2 grid. */
+/* Keep both figures aligned on narrow screens. */
 @media (max-width: 40rem) {
   .stats { display: grid; grid-template-columns: 1fr 1fr; }
   .stats li + li::before { content: none; }
