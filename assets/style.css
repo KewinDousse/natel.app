@@ -43,7 +43,6 @@
   --muted: #5f6168;
   --wash: #f4f4f3;
   --rule: #e4e4e2;
-  --leader: #b9babe;
   --surface: #d8261d;
   --on-surface: #ffffff;
   --tab-rule: rgb(255 255 255 / 0.28);
@@ -65,7 +64,6 @@
     --muted: #a2a4ab;
     --wash: #1b1c20;
     --rule: #2c2d32;
-    --leader: #4a4c52;
     --surface: #a11f18;
     --on-surface: #ffffff;
     --tab-rule: rgb(255 255 255 / 0.2);
@@ -79,7 +77,6 @@
   --muted: #a2a4ab;
   --wash: #1b1c20;
   --rule: #2c2d32;
-  --leader: #4a4c52;
   --surface: #a11f18;
   --on-surface: #ffffff;
   --tab-rule: rgb(255 255 255 / 0.2);
@@ -391,7 +388,6 @@ p:last-child { margin-bottom: 0; }
 /* The first item lines up with the section heading. */
 .section-body > :first-child { margin-top: 0; }
 
-/* Directory rows: term, dotted leader, entry, like the contact list. */
 .directory {
   margin: 1.5rem 0 0;
   display: grid;
@@ -426,13 +422,6 @@ p:last-child { margin-bottom: 0; }
     padding-block: 0.7rem;
   }
   .directory dt { white-space: nowrap; }
-  .directory dt::after {
-    content: "";
-    flex: 1;
-    min-width: 1rem;
-    border-bottom: 2px dotted var(--leader);
-    transform: translateY(-0.3em);
-  }
 }
 
 .trust {
