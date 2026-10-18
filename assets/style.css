@@ -187,27 +187,12 @@ code {
   max-width: 44rem;
   align-content: start;
 }
-.hero-top {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
 .mark {
   width: 3.5rem;
   height: 3.5rem;
   border-radius: 0.8rem;
   /* White keyline so the band stays visible on red (brand kit rule). */
   box-shadow: 0 0 0 2px var(--on-surface);
-}
-.badge {
-  display: inline-block;
-  font-size: 0.8125rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  border: 1.5px solid currentColor;
-  border-radius: 999px;
-  padding: 0.1rem 0.6rem;
 }
 .wordmark {
   margin: 0.25rem 0 0;
@@ -318,15 +303,13 @@ code {
   background: var(--dot);
 }
 .window img, .phone img { width: 100%; }
-.phone { width: min(15rem, 70%); margin-inline: auto; }
-.phone img {
+.phone {
+  width: min(15rem, 70%);
+  margin-inline: auto;
+  aspect-ratio: 390 / 744;
+  overflow: hidden;
   border-radius: 1rem;
   box-shadow: 0 0 0 6px var(--surface);
-}
-.shots-figure figcaption {
-  margin-top: 0.75rem;
-  font-size: 0.9375rem;
-  text-align: center;
 }
 @media (max-width: 89.99rem) {
   .window { display: none; }
@@ -343,11 +326,10 @@ code {
     padding-bottom: 4.5rem;
   }
   .shots-figure { margin-top: -4rem; }
-  .phone img {
+  .phone {
     outline: 1px solid var(--rule);
     box-shadow: 0 0 0 6px var(--paper);
   }
-  .shots-figure figcaption { color: var(--muted); }
 }
 
 @media (min-width: 48rem) {
@@ -369,11 +351,8 @@ code {
     grid-template-columns: 24rem minmax(0, 60rem);
     column-gap: 2.5rem;
   }
-  /* The phone covers about 12% of its width of the window, and starts below
-     the window's toolbar and the contact's Edit button, so it never cuts a
-     control. The figure reserves room down to the phone's bottom, and the
-     caption stays under the window. */
-  .shots-figure { min-height: calc(9.5rem + 15rem * 806 / 390); }
+  /* Keep controls visible and reserve room down to the phone's bottom. */
+  .shots-figure { min-height: calc(9.5rem + 15rem * 744 / 390); }
   .window { width: calc(100% - 13.2rem); }
   .phone {
     position: absolute;
@@ -381,7 +360,6 @@ code {
     top: 9.5rem;
     width: 15rem;
   }
-  .shots-figure figcaption { text-align: left; }
 }
 
 /* Sections */
@@ -437,10 +415,10 @@ p:last-child { margin-bottom: 0; }
 }
 .directory > div {
   display: grid;
-  grid-template-columns: 9.5rem minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr);
   align-items: first baseline;
-  gap: 0 1rem;
-  padding-block: 0.6rem;
+  gap: 0.25rem 1rem;
+  padding-block: 0.75rem;
 }
 .directory dt {
   font-weight: 700;
@@ -451,6 +429,13 @@ p:last-child { margin-bottom: 0; }
 }
 .directory dd { margin: 0; min-width: 0; }
 .directory dt .icon { align-self: flex-start; margin-top: 0.2rem; }
+@media (min-width: 48rem) {
+  .directory > div {
+    grid-template-columns: 9.5rem minmax(0, 1fr);
+    gap: 0 1rem;
+    padding-block: 0.6rem;
+  }
+}
 @media (min-width: 56rem) {
   .directory > div {
     grid-template-columns: 14.5rem minmax(0, 1fr);
