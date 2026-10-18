@@ -440,10 +440,8 @@ p:last-child { margin-bottom: 0; }
   grid-template-columns: 9.5rem minmax(0, 1fr);
   align-items: first baseline;
   gap: 0 1rem;
-  padding-block: 0.75rem;
-  border-bottom: 1px solid var(--rule);
+  padding-block: 0.6rem;
 }
-.directory > div:last-child { border-bottom: 0; }
 .directory dt {
   font-weight: 700;
   display: flex;
@@ -456,7 +454,7 @@ p:last-child { margin-bottom: 0; }
 @media (min-width: 56rem) {
   .directory > div {
     grid-template-columns: 14.5rem minmax(0, 1fr);
-    padding-block: 0.85rem;
+    padding-block: 0.7rem;
   }
   .directory dt { white-space: nowrap; }
   .directory dt::after {

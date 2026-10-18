@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Natel</title>
   <meta name="description" content="A lightweight web app to browse and edit the contacts on your CardDAV server. Built for Baïkal, tested against Baïkal, Radicale and Xandikos.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
   <meta name="color-scheme" content="light dark">
   <meta name="theme-color" content="#D8261D" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#A11F18" media="(prefers-color-scheme: dark)">
@@ -49,24 +50,24 @@
           <a class="button secondary" href="https://github.com/KewinDousse/natel">View on GitHub</a>
         </div>
       </div>
-          <figure class="shots-figure">
-            <div class="composition">
-              <div class="window">
-                <div class="window-bar" aria-hidden="true"><span></span><span></span><span></span></div>
-                <picture>
-                  <source media="(prefers-color-scheme: dark)" srcset="assets/img/desktop-dark.png 1x, assets/img/desktop-dark@2x.png 2x">
-                  <img src="assets/img/desktop-light.png" srcset="assets/img/desktop-light.png 1x, assets/img/desktop-light@2x.png 2x" width="1280" height="900" alt="Natel on a desktop screen: the contact list grouped by letter on the left, with a phone number or email on each row, and Caitlyn Kiramman's page on the right, with Call, Text and Email buttons, her phone, email, birthday and group.">
-                </picture>
-              </div>
-              <div class="phone">
-                <picture>
-                  <source media="(prefers-color-scheme: dark)" srcset="assets/img/mobile-dark.png 1x, assets/img/mobile-dark@2x.png 2x">
-                  <img src="assets/img/mobile-light.png" srcset="assets/img/mobile-light.png 1x, assets/img/mobile-light@2x.png 2x" width="390" height="806" alt="Caitlyn Kiramman's page on a phone, with an Edit button at the top.">
-                </picture>
-              </div>
-            </div>
-            <figcaption>The demo, with made-up contacts.</figcaption>
-          </figure>
+      <figure class="shots-figure">
+        <div class="composition">
+          <div class="window">
+            <div class="window-bar" aria-hidden="true"><span></span><span></span><span></span></div>
+            <picture>
+              <source media="(prefers-color-scheme: dark)" srcset="assets/img/desktop-dark.png 1x, assets/img/desktop-dark@2x.png 2x">
+              <img src="assets/img/desktop-light.png" srcset="assets/img/desktop-light.png 1x, assets/img/desktop-light@2x.png 2x" width="1280" height="900" alt="Natel on a desktop screen: the contact list grouped by letter on the left, with a phone number or email on each row, and Caitlyn Kiramman's page on the right, with Call, Text and Email buttons, her phone, email, birthday and group.">
+            </picture>
+          </div>
+          <div class="phone">
+            <picture>
+              <source media="(prefers-color-scheme: dark)" srcset="assets/img/mobile-dark.png 1x, assets/img/mobile-dark@2x.png 2x">
+              <img src="assets/img/mobile-light.png" srcset="assets/img/mobile-light.png 1x, assets/img/mobile-light@2x.png 2x" width="390" height="806" alt="Caitlyn Kiramman's page on a phone, with an Edit button at the top.">
+            </picture>
+          </div>
+        </div>
+        <figcaption>The demo, with made-up contacts.</figcaption>
+      </figure>
     </div>
     <ul class="tabs" aria-hidden="true">
       <li>A–B</li><li>C–D</li><li>E–G</li><li>H–K</li><li>L–M</li><li class="on">N–P</li><li>Q–S</li><li>T–V</li><li>W–Z</li>
