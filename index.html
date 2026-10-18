@@ -53,7 +53,6 @@
       <figure class="shots-figure">
         <div class="composition">
           <div class="window">
-            <div class="window-bar" aria-hidden="true"><span></span><span></span><span></span></div>
             <picture>
               <source media="(prefers-color-scheme: dark)" srcset="assets/img/desktop-dark.png 1x, assets/img/desktop-dark@2x.png 2x">
               <img src="assets/img/desktop-light.png" srcset="assets/img/desktop-light.png 1x, assets/img/desktop-light@2x.png 2x" width="1280" height="900" alt="Natel on a desktop screen: the contact list grouped by letter on the left, with a phone number or email on each row, and Caitlyn Kiramman's page on the right, with Call, Text and Email buttons, her phone, email, birthday and group.">
@@ -148,22 +147,28 @@
         <h2 id="run-title">Self-host</h2>
         <div class="section-body">
           <ul class="stats">
-            <li>26&nbsp;MB image</li>
-            <li>~16&nbsp;MB RAM</li>
+            <li>
+              <strong>26<span class="stat-unit"> MB</span></strong
+              ><span class="stat-label">Compressed image</span>
+            </li>
+            <li>
+              <strong>~16<span class="stat-unit"> MB</span></strong
+              ><span class="stat-label">RAM at idle</span>
+            </li>
           </ul>
-          <p class="note">Compressed image size and RAM at rest, measured on linux/amd64.</p>
+          <p class="note">Measured on linux/amd64, 15 October 2026.</p>
 
           <div class="install" data-tabs>
             <div class="tablist" data-tablist hidden></div>
 
             <div class="panel" id="docker" data-panel>
               <h3 class="panel-title">Docker</h3>
-              <p>In a <code>compose.yaml</code>, set <code>BAIKAL_URL</code> to your CardDAV server's origin:</p>
+              <p>In a <code>compose.yaml</code>, set <code>CARDDAV_URL</code> to your CardDAV server's origin:</p>
 <pre tabindex="0"><code>services:
   natel:
     image: ghcr.io/kewindousse/natel:0.3.0
     environment:
-      BAIKAL_URL: https://dav.example.com
+      CARDDAV_URL: https://dav.example.com
     ports:
       - "127.0.0.1:8080:8080"</code></pre>
 <pre><code>docker compose up -d</code></pre>
@@ -172,11 +177,41 @@
 
             <div class="panel" id="bare-metal" data-panel>
               <h3 class="panel-title">Bare metal</h3>
-              <p>You need Node 24 with pnpm, Go 1.27 and Caddy 2.11.7 or later.</p>
+              <p>
+                You need
+                <span class="technology"
+                  ><img
+                    src="assets/img/nodejs.svg"
+                    alt=""
+                    width="20"
+                    height="22"
+                  />Node 24</span
+                >
+                with pnpm,
+                <span class="technology"
+                  ><img
+                    class="go-logo"
+                    src="assets/img/go.svg"
+                    alt=""
+                    width="28"
+                    height="11"
+                  />Go 1.27</span
+                >
+                and
+                <span class="technology"
+                  ><img
+                    src="assets/img/caddy.png"
+                    alt=""
+                    width="20"
+                    height="20"
+                  />Caddy 2.11.7</span
+                >
+                or later.
+              </p>
               <ol class="plain-steps">
                 <li>Build a release tag: <code>pnpm build</code> for the app, <code>go build</code> for <code>natel-session</code>.</li>
                 <li>Copy <code>dist/</code> into a folder of its own, never the repository, with the Caddyfile and <code>natel-session</code>.</li>
-                <li>Run Caddy under <code>natel-session</code> in its systemd service, with <code>BAIKAL_URL</code> set, then restart Caddy.</li>
+                <li>Run Caddy under <code>natel-session</code> in its systemd service, with <code>CARDDAV_URL</code> set, then restart Caddy.</li>
               </ol>
               <p>Every command and setting: <a href="https://github.com/KewinDousse/natel/blob/main/docs/bare-metal.md">running without Docker</a>.</p>
             </div>
