@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Natel</title>
+  <meta name="description" content="A lightweight web app to browse and edit the contacts on your CardDAV server. Built for Baïkal, tested against Baïkal, Radicale and Xandikos.">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#D8261D" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#A11F18" media="(prefers-color-scheme: dark)">
+  <link rel="canonical" href="https://natel.app/">
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preload" href="assets/fonts/work-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/style.css">
+  <script src="assets/tabs.js" defer></script>
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://natel.app/">
+  <meta property="og:site_name" content="Natel">
+  <meta property="og:title" content="Natel">
+  <meta property="og:description" content="A lightweight web app to browse and edit the contacts on your CardDAV server. Built for Baïkal, tested against Baïkal, Radicale and Xandikos.">
+  <meta property="og:image" content="https://natel.app/assets/img/og-image-en.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Natel: the contact editor your CardDAV server is missing.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Natel">
+  <meta name="twitter:description" content="A lightweight web app to browse and edit the contacts on your CardDAV server. Built for Baïkal, tested against Baïkal, Radicale and Xandikos.">
+  <meta name="twitter:image" content="https://natel.app/assets/img/og-image-en.png">
+  <meta name="twitter:image:alt" content="Natel: the contact editor your CardDAV server is missing.">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="hero">
+    <div class="wrap wide">
+      <div class="hero-text">
+        <div class="hero-top">
+          <img class="mark" src="assets/img/natel-mark.svg" alt="" width="56" height="56">
+          <span class="badge">Alpha</span>
+        </div>
+        <h1 class="wordmark"><img src="assets/img/natel-wordmark-white.svg" alt="Natel" width="480" height="202"></h1>
+        <p class="headline">The contact editor your CardDAV server is missing.</p>
+        <p class="lede">A small web app for an existing CardDAV server, such as Baïkal or Radicale. It edits the same contacts your phone and desktop already sync.</p>
+        <div class="actions">
+          <a class="button primary" href="https://demo.natel.app">Try the demo</a>
+          <a class="button secondary" href="https://github.com/KewinDousse/natel">View on GitHub</a>
+        </div>
+      </div>
+          <figure class="shots-figure">
+            <div class="composition">
+              <div class="window">
+                <div class="window-bar" aria-hidden="true"><span></span><span></span><span></span></div>
+                <picture>
+                  <source media="(prefers-color-scheme: dark)" srcset="assets/img/desktop-dark.png 1x, assets/img/desktop-dark@2x.png 2x">
+                  <img src="assets/img/desktop-light.png" srcset="assets/img/desktop-light.png 1x, assets/img/desktop-light@2x.png 2x" width="1280" height="900" alt="Natel on a desktop screen: the contact list grouped by letter on the left, with a phone number or email on each row, and Caitlyn Kiramman's page on the right, with Call, Text and Email buttons, her phone, email, birthday and group.">
+                </picture>
+              </div>
+              <div class="phone">
+                <picture>
+                  <source media="(prefers-color-scheme: dark)" srcset="assets/img/mobile-dark.png 1x, assets/img/mobile-dark@2x.png 2x">
+                  <img src="assets/img/mobile-light.png" srcset="assets/img/mobile-light.png 1x, assets/img/mobile-light@2x.png 2x" width="390" height="806" alt="Caitlyn Kiramman's page on a phone, with an Edit button at the top.">
+                </picture>
+              </div>
+            </div>
+            <figcaption>The demo, with made-up contacts.</figcaption>
+          </figure>
+    </div>
+    <ul class="tabs" aria-hidden="true">
+      <li>A–B</li><li>C–D</li><li>E–G</li><li>H–K</li><li>L–M</li><li class="on">N–P</li><li>Q–S</li><li>T–V</li><li>W–Z</li>
+    </ul>
+  </header>
+
+  <main id="main">
+
+    <section id="features" aria-labelledby="features-title">
+      <div class="wrap">
+        <h2 id="features-title">What it does</h2>
+        <div class="section-body">
+          <dl class="directory">
+            <div>
+              <dt><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>Search</dt>
+              <dd>Names, phone numbers, email addresses and organisations.</dd>
+            </div>
+            <div>
+              <dt><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/></svg>Edit</dt>
+              <dd>Create, edit and delete contacts.</dd>
+            </div>
+            <div>
+              <dt><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.09-3.09a2 2 0 0 0-2.82 0L6 21"/></svg>Photos</dt>
+              <dd>Add a photo and crop it. Large photos are scaled down.</dd>
+            </div>
+            <div>
+              <dt><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>Groups</dt>
+              <dd>Filter by group and change who is in it.</dd>
+            </div>
+            <div>
+              <dt><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Address books</dt>
+              <dd>Switch between books and move a contact to another.</dd>
+            </div>
+            <div>
+              <dt><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M5 21h14"/></svg>Import and export</dt>
+              <dd>Import a <code>.vcf</code> file into a book, or export a whole book.</dd>
+            </div>
+            <div>
+              <dt><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20M2 12h20"/></svg>Phone and desktop</dt>
+              <dd>English or French, light or dark, keyboard shortcuts, installable as an app.</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <section id="data" aria-labelledby="data-title">
+      <div class="wrap">
+        <h2 id="data-title">Your data</h2>
+        <div class="section-body">
+          <ul class="trust">
+            <li>
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4M8 13h8M8 17h5"/></svg>
+              <p><strong>Fields it doesn't edit are kept.</strong> Properties, parameters and groups the editor doesn't show are written back on save. Round-trip tests cover this.</p>
+            </li>
+            <li>
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a9 9 0 1 1-2.64-6.36L21 8M21 3v5h-5"/></svg>
+              <p><strong>Changes from other devices aren't overwritten.</strong> If a contact changed on your phone after Natel read it, saving shows a conflict instead of replacing it.</p>
+            </li>
+            <li>
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+              <p><strong>Tested against real servers.</strong> The end-to-end suite runs in CI against Baïkal, Radicale and Xandikos. Nextcloud and other servers aren't in it: see <a href="https://github.com/KewinDousse/natel/blob/main/docs/compatibility.md">compatibility</a>.</p>
+            </li>
+            <li>
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+              <p><strong>Your password stays off disk.</strong> Natel checks it against your server and keeps it in memory for the session.</p>
+            </li>
+            <li>
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/><path d="m3 3 18 18"/></svg>
+              <p><strong>No tracking.</strong> No analytics, and no requests to third-party servers.</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="run" aria-labelledby="run-title">
+      <div class="wrap">
+        <h2 id="run-title">Run it</h2>
+        <div class="section-body">
+          <ul class="stats">
+            <li>1 container</li>
+            <li>26&nbsp;MB image</li>
+            <li>~16&nbsp;MB RAM</li>
+            <li>No database</li>
+          </ul>
+          <p class="note">Compressed image size and RAM at rest, measured on linux/amd64.</p>
+
+          <div class="install" data-tabs>
+            <div class="tablist" data-tablist hidden></div>
+
+            <div class="panel" id="docker" data-panel>
+              <h3 class="panel-title">Docker</h3>
+              <p>In a <code>compose.yaml</code>, set <code>BAIKAL_URL</code> to your CardDAV server's origin:</p>
+<pre tabindex="0"><code>services:
+  natel:
+    image: ghcr.io/kewindousse/natel:0.3.0
+    environment:
+      BAIKAL_URL: https://dav.example.com
+    ports:
+      - "127.0.0.1:8080:8080"</code></pre>
+<pre><code>docker compose up -d</code></pre>
+              <p>Then open <code>http://localhost:8080</code> and sign in with your CardDAV account. For HTTPS, reverse proxies and other options, see the <a href="https://github.com/KewinDousse/natel/blob/main/docs/deployment.md">deployment guide</a>.</p>
+            </div>
+
+            <div class="panel" id="bare-metal" data-panel>
+              <h3 class="panel-title">Bare metal</h3>
+              <p>You need Node 24 with pnpm, Go 1.27 and Caddy 2.11.7 or later.</p>
+              <ol class="plain-steps">
+                <li>Build a release tag: <code>pnpm build</code> for the app, <code>go build</code> for <code>natel-session</code>.</li>
+                <li>Copy <code>dist/</code> into a folder of its own, never the repository, with the Caddyfile and <code>natel-session</code>.</li>
+                <li>Run Caddy under <code>natel-session</code> in its systemd service, with <code>BAIKAL_URL</code> set, then restart Caddy.</li>
+              </ol>
+              <p>Every command and setting: <a href="https://github.com/KewinDousse/natel/blob/main/docs/bare-metal.md">running without Docker</a>.</p>
+            </div>
+          </div>
+
+          <p class="callout"><strong>Alpha software.</strong> Export your address books, or back up your server, before your first edit.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="brandline">
+        <img src="assets/img/natel-mark-small.svg" alt="" width="32" height="32">
+        <p>Natel is open source, under the <a href="https://github.com/KewinDousse/natel/blob/main/LICENSE">MIT license</a>.</p>
+      </div>
+      <nav aria-label="Project">
+        <ul>
+          <li><a href="https://github.com/KewinDousse/natel">GitHub</a></li>
+          <li><a href="https://demo.natel.app">Demo</a></li>
+          <li><a href="https://github.com/KewinDousse/natel/tree/main/docs">Docs</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>
