@@ -231,6 +231,20 @@ code {
 .button.primary:hover { background: transparent; color: var(--on-surface); }
 .button.secondary { color: var(--on-surface); }
 .button.secondary:hover { background: var(--on-surface); color: var(--surface); }
+.hero-note {
+  margin: 0;
+  max-width: 46ch;
+  font-size: 0.9375rem;
+}
+.release {
+  display: inline-block;
+  margin-right: 0.35rem;
+  padding: 0 0.55rem;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  font-weight: 700;
+  white-space: nowrap;
+}
 
 /* The thumb index of a paper address book, as on the brand images. */
 .tabs { display: none; }
@@ -531,6 +545,12 @@ pre {
   line-height: 1.55;
 }
 pre code { background: none; padding: 0; font-size: inherit; }
+/* The image line, with its version, fits a phone without scrolling. */
+@media (max-width: 30rem) {
+  pre { font-size: 0.75rem; padding-inline: 0.75rem; }
+}
+
+.requirement { margin-top: 1rem; }
 
 /* Footer */
 

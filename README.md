@@ -22,9 +22,9 @@ python3 -m http.server 8000 --bind 127.0.0.1
 - `assets/fonts/`: Work Sans and Big Shoulders (latin and latin-ext subsets)
   from Fontsource, under the SIL Open Font License (`OFL-*.txt`).
 - `assets/img/`: the mark, the wordmark and the `og:image` from
-  `docs/brand/`. The screenshots show Caitlyn Kiramman's page in the demo
-  build, without its demo reminders, in light and dark, at 1x and 2x: the
-  desktop at 1280×900, the phone at 390×806. In the main repository,
+  `docs/brand/`. The screenshots come from the demo build, without its
+  demo reminders, in light and dark, at 1x and 2x: the desktop at 1280×900
+  with Caitlyn Kiramman's page open, the phone at 390×806 on the list. In the main repository,
   `pnpm brand:images --site ../natel.app/assets/img` renders them and copies
   the `og:image`.
 - `CNAME`: the custom domain for GitHub Pages.
@@ -35,6 +35,11 @@ python3 -m http.server 8000 --bind 127.0.0.1
 The image size and RAM figures in "Run it" come from the "Build" section of
 `docs/ARCHITECTURE.md` in KewinDousse/natel, measured on 2026-10-15. Update
 them here whenever that section has a new measurement.
+
+## Version
+
+The version beside the buttons and the image tag in "Self-host" follow the
+latest release of KewinDousse/natel. Update both with each release.
 
 ## License
 
