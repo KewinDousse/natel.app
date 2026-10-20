@@ -24,7 +24,8 @@ python3 -m http.server 8000 --bind 127.0.0.1
 - `assets/img/`: the mark, the wordmark and the `og:image` from
   `docs/brand/`. The screenshots come from the demo build, without its
   demo reminders, in light and dark, at 1x and 2x: the desktop at 1280×900
-  with Caitlyn Kiramman's page open, the phone at 390×806 on the list. In the main repository,
+  with Caitlyn Kiramman's page open, the phone at 390×806 on the list
+  (`mobile-*`) and on her page (`mobile-contact-*`). In the main repository,
   `pnpm brand:images --site ../natel.app/assets/img` renders them and copies
   the `og:image`.
 - `CNAME`: the custom domain for GitHub Pages.
@@ -38,8 +39,8 @@ them here whenever that section has a new measurement.
 
 ## Version
 
-The version beside the buttons and the image tag in "Self-host" follow the
-latest release of KewinDousse/natel. Update both with each release.
+The image tag in "Self-host" follows the latest release of
+KewinDousse/natel. Update it with each release.
 
 ## License
 

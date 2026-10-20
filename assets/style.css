@@ -231,20 +231,6 @@ code {
 .button.primary:hover { background: transparent; color: var(--on-surface); }
 .button.secondary { color: var(--on-surface); }
 .button.secondary:hover { background: var(--on-surface); color: var(--surface); }
-.hero-note {
-  margin: 0;
-  max-width: 46ch;
-  font-size: 0.9375rem;
-}
-.release {
-  display: inline-block;
-  margin-right: 0.35rem;
-  padding: 0 0.55rem;
-  border: 1px solid currentColor;
-  border-radius: 999px;
-  font-weight: 700;
-  white-space: nowrap;
-}
 
 /* The thumb index of a paper address book, as on the brand images. */
 .tabs { display: none; }
@@ -334,6 +320,19 @@ code {
     column-gap: clamp(2rem, 4vw, 3.5rem);
   }
   .phone { width: 100%; }
+}
+
+/* The contact's page joins the list once two phones leave the text room. */
+.phone.second { display: none; }
+@media (min-width: 72rem) and (max-width: 89.99rem) {
+  .hero .wrap { grid-template-columns: minmax(0, 1fr) 29rem; }
+  .composition {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+  .phone { width: 14rem; flex: none; }
+  .phone.second { display: block; margin-top: 3rem; }
 }
 
 /* From 90rem the composition takes everything right of a 24rem text
