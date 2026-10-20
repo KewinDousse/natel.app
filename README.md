@@ -39,8 +39,9 @@ them here whenever that section has a new measurement.
 
 ## Version
 
-The image tag in "Self-host" follows the latest release of
-KewinDousse/natel. Update it with each release.
+The image tag in "Self-host" is the minor version, such as `0.3`, which
+always points to its newest patch: installs get fixes without a breaking
+change. Update it with each minor release of KewinDousse/natel.
 
 ## License
 
