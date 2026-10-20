@@ -24,10 +24,11 @@ python3 -m http.server 8000 --bind 127.0.0.1
 - `assets/img/`: the mark, the wordmark and the `og:image` from
   `docs/brand/`. The screenshots come from the demo build, without its
   demo reminders, in light and dark, at 1x and 2x: the desktop at 1280×900
-  with Caitlyn Kiramman's page open, the phone at 390×806 on the list
-  (`mobile-*`) and on her page (`mobile-contact-*`). In the main repository,
-  `pnpm brand:images --site ../natel.app/assets/img` renders them and copies
-  the `og:image`.
+  with Caitlyn Kiramman's page open, the phone at 390×806 on the list. The
+  hero always shows the desktop, cropped to its left part where it would
+  shrink too far, and adds the phone where there is room. In the main
+  repository, `pnpm brand:images --site ../natel.app/assets/img` renders
+  them and copies the `og:image`.
 - `CNAME`: the custom domain for GitHub Pages.
 - `.nojekyll`: serves the files as they are, without Jekyll.
 
