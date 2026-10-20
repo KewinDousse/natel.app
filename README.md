@@ -23,8 +23,10 @@ python3 -m http.server 8000 --bind 127.0.0.1
   from Fontsource, under the SIL Open Font License (`OFL-*.txt`).
 - `assets/img/`: the mark, the wordmark and the `og:image` from
   `docs/brand/`. The screenshots show Caitlyn Kiramman's page in the demo
-  build (`VITE_DEMO=1`), in light and dark, at 1x and 2x: the desktop at
-  1280×900, the phone at 390×806.
+  build, without its demo reminders, in light and dark, at 1x and 2x: the
+  desktop at 1280×900, the phone at 390×806. In the main repository,
+  `pnpm brand:images --site ../natel.app/assets/img` renders them and copies
+  the `og:image`.
 - `CNAME`: the custom domain for GitHub Pages.
 - `.nojekyll`: serves the files as they are, without Jekyll.
 
