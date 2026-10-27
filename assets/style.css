@@ -580,11 +580,7 @@ footer .brandline img { width: 2rem; height: 2rem; flex: none; }
 footer .repo-link {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  width: 1.75rem;
-  height: 1.75rem;
-  margin-inline-start: 0.25rem;
-  vertical-align: middle;
+  gap: 0.4rem;
 }
 footer .repo-link svg {
   display: block;
@@ -598,6 +594,7 @@ footer nav ul {
   flex-wrap: wrap;
   gap: 0.5rem 1.25rem;
 }
+footer nav li { display: flex; }
 footer a { color: var(--ink); }
 /* Once the nav wraps under the license text, align it with that text. */
 @media (max-width: 60rem) {
