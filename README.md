@@ -48,3 +48,15 @@ change. Update it with each minor release of KewinDousse/natel.
 
 The site is available under the [MIT license](LICENSE). The fonts keep their
 own license.
+
+## Screenshot encoding
+
+The website serves lossless WebP screenshots, with width-based sources for
+desktop and phone layouts. The phone overlay loads lazily so it is not fetched
+when its layout is hidden. The Open Graph image remains PNG for link previews.
+
+After generating PNG screenshots with `pnpm brand:images --site
+../natel.app/assets/img` in the application repository, run
+`sh scripts/encode-screenshots.sh` here. The script requires `cwebp`, converts all
+eight screenshots losslessly and keeps the PNG sources as explicit browser fallbacks. Refresh all four
+light/dark, desktop/mobile pairs together. There is no deployment build step.
