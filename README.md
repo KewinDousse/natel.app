@@ -30,8 +30,6 @@ python3 -m http.server 8000 --bind 127.0.0.1
   shrink too far, and adds the phone where there is room. In the main
   repository, `pnpm brand:images --site ../natel.app/assets/img` renders
   them and copies the `og:image`.
-- `CNAME`: the custom domain for GitHub Pages.
-- `.nojekyll`: serves the files as they are, without Jekyll.
 
 ## Measured figures
 
