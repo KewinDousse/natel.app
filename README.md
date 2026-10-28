@@ -1,7 +1,8 @@
 # natel.app
 
 The website for [Natel](https://github.com/KewinDousse/natel), served at
-<https://natel.app> by GitHub Pages from the root of the `main` branch.
+<https://natel.app> from the root of the `main` branch: the server pulls it
+every minute, so a push to `main` is live within one.
 
 It is plain HTML and CSS, with one small script for the install tabs: no
 build step and no request to another host. To preview it, serve the folder
