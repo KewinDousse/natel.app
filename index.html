@@ -74,14 +74,18 @@
         <div class="composition">
           <div class="window cropped">
             <picture>
-              <source media="(prefers-color-scheme: dark)" srcset="assets/img/desktop-dark.png 1x, assets/img/desktop-dark@2x.png 2x">
-              <img src="assets/img/desktop-light.png" srcset="assets/img/desktop-light.png 1x, assets/img/desktop-light@2x.png 2x" width="1280" height="900" alt="Natel on a desktop screen: the contact list grouped by letter on the left, with a phone number or email on each row, and Caitlyn Kiramman's page on the right, with Call, Text and Email buttons, her phone, email, birthday and group.">
+              <source type="image/webp" sizes="(min-width: 90rem) 48rem, (min-width: 72rem) 44rem, (min-width: 48rem) calc(100vw - 10rem), 100vw" media="(prefers-color-scheme: dark)" srcset="assets/img/desktop-dark.webp 1280w, assets/img/desktop-dark@2x.webp 2560w">
+              <source sizes="(min-width: 90rem) 48rem, (min-width: 72rem) 44rem, (min-width: 48rem) calc(100vw - 10rem), 100vw" media="(prefers-color-scheme: dark)" srcset="assets/img/desktop-dark.png 1280w, assets/img/desktop-dark@2x.png 2560w">
+              <source type="image/webp" sizes="(min-width: 90rem) 48rem, (min-width: 72rem) 44rem, (min-width: 48rem) calc(100vw - 10rem), 100vw" srcset="assets/img/desktop-light.webp 1280w, assets/img/desktop-light@2x.webp 2560w">
+              <img sizes="(min-width: 90rem) 48rem, (min-width: 72rem) 44rem, (min-width: 48rem) calc(100vw - 10rem), 100vw" fetchpriority="high" src="assets/img/desktop-light.png" srcset="assets/img/desktop-light.png 1280w, assets/img/desktop-light@2x.png 2560w" width="1280" height="900" alt="Natel on a desktop screen: the contact list grouped by letter on the left, with a phone number or email on each row, and Caitlyn Kiramman's page on the right, with Call, Text and Email buttons, her phone, email, birthday and group.">
             </picture>
           </div>
           <div class="phone">
             <picture>
-              <source media="(prefers-color-scheme: dark)" srcset="assets/img/mobile-dark.png 1x, assets/img/mobile-dark@2x.png 2x">
-              <img src="assets/img/mobile-light.png" srcset="assets/img/mobile-light.png 1x, assets/img/mobile-light@2x.png 2x" width="390" height="806" alt="The contact list on a phone: contacts grouped under red letters, each with a phone number or email address.">
+              <source type="image/webp" sizes="(min-width: 90rem) 15rem, 12rem" media="(prefers-color-scheme: dark)" srcset="assets/img/mobile-dark.webp 390w, assets/img/mobile-dark@2x.webp 780w">
+              <source sizes="(min-width: 90rem) 15rem, 12rem" media="(prefers-color-scheme: dark)" srcset="assets/img/mobile-dark.png 390w, assets/img/mobile-dark@2x.png 780w">
+              <source type="image/webp" sizes="(min-width: 90rem) 15rem, 12rem" srcset="assets/img/mobile-light.webp 390w, assets/img/mobile-light@2x.webp 780w">
+              <img sizes="(min-width: 90rem) 15rem, 12rem" loading="lazy" src="assets/img/mobile-light.png" srcset="assets/img/mobile-light.png 390w, assets/img/mobile-light@2x.png 780w" width="390" height="806" alt="The contact list on a phone: contacts grouped under red letters, each with a phone number or email address.">
             </picture>
           </div>
         </div>
