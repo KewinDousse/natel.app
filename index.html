@@ -1,37 +1,45 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" prefix="og: https://ogp.me/ns#">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Search titles identify the product category; the homepage H1 states its value.
+       Give additional pages titles and descriptions specific to their topic. -->
   <title>Natel: self-hosted CardDAV web contact editor</title>
-  <meta name="description" content="A lightweight web app to browse and edit the contacts on your CardDAV server. Built for Baïkal, tested against Baïkal, Radicale and Xandikos.">
+  <meta name="description" content="Natel is a lightweight, self-hosted web app for editing contacts on your existing CardDAV server. Tested with Baïkal, Radicale and Xandikos.">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
   <meta name="color-scheme" content="light dark">
   <meta name="theme-color" content="#D8261D" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#A11F18" media="(prefers-color-scheme: dark)">
+  <!-- Each published page needs its own canonical and matching og:url. -->
   <link rel="canonical" href="https://natel.app/">
   <link rel="icon" href="/favicon.ico" sizes="48x48">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="preload" href="assets/fonts/work-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
   <!-- A content hash keeps cached styles aligned with this page. -->
-  <link rel="stylesheet" href="assets/style.css?v=955af8bb282f">
-  <script src="assets/tabs.js" defer></script>
+  <link rel="stylesheet" href="assets/style.css?v=47636e8114c5">
+  <script src="assets/tabs.js?v=e7214486d8d6" defer></script>
 
+  <!-- Homepage previews use the slogan as the hook and the lead as a factual summary. -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://natel.app/">
   <meta property="og:site_name" content="Natel">
-  <meta property="og:title" content="Natel: self-hosted CardDAV web contact editor">
-  <meta property="og:description" content="A lightweight web app to browse and edit the contacts on your CardDAV server. Built for Baïkal, tested against Baïkal, Radicale and Xandikos.">
+  <meta property="og:title" content="Natel: the contact editor your CardDAV server is missing.">
+  <meta property="og:description" content="Natel is a lightweight, self-hosted web app for editing contacts on your existing CardDAV server. Tested with Baïkal, Radicale and Xandikos.">
   <meta property="og:image" content="https://natel.app/assets/img/og-image-en.png">
+  <meta property="og:image:type" content="image/png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Natel: the contact editor your CardDAV server is missing.">
+  <!-- Image alternatives describe the artwork, including the wording it carries. -->
+  <meta property="og:image:alt" content="Natel wordmark and the slogan “The contact editor your CardDAV server is missing.” beside a screenshot of the contact list and a contact’s page.">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Natel: self-hosted CardDAV web contact editor">
-  <meta name="twitter:description" content="A lightweight web app to browse and edit the contacts on your CardDAV server. Built for Baïkal, tested against Baïkal, Radicale and Xandikos.">
+  <meta name="twitter:title" content="Natel: the contact editor your CardDAV server is missing.">
+  <meta name="twitter:description" content="Natel is a lightweight, self-hosted web app for editing contacts on your existing CardDAV server. Tested with Baïkal, Radicale and Xandikos.">
   <meta name="twitter:image" content="https://natel.app/assets/img/og-image-en.png">
-  <meta name="twitter:image:alt" content="Natel: the contact editor your CardDAV server is missing.">
+  <meta name="twitter:image:alt" content="Natel wordmark and the slogan “The contact editor your CardDAV server is missing.” beside a screenshot of the contact list and a contact’s page.">
+<!-- JSON-LD describes the app using the visible lead, without duplicate microdata.
+     References from other pages share this app @id; inLanguage is the app's UI. -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -39,13 +47,10 @@
   "@id": "https://natel.app/#application",
   "name": "Natel",
   "url": "https://natel.app/",
-  "description": "A self-hosted web contact editor for an existing CardDAV server. Tested against Baïkal, Radicale and Xandikos.",
+  "description": "Natel is a lightweight, self-hosted web app for editing contacts on your existing CardDAV server. Tested with Baïkal, Radicale and Xandikos.",
   "applicationCategory": "UtilitiesApplication",
-  "operatingSystem": "Web browser",
-  "inLanguage": [
-    "en",
-    "fr"
-  ],
+  "softwareRequirements": "An existing CardDAV server and account.",
+  "inLanguage": ["en", "fr"],
   "isAccessibleForFree": true,
   "license": "https://github.com/KewinDousse/natel/blob/main/LICENSE",
   "sameAs": "https://github.com/KewinDousse/natel"
@@ -60,10 +65,11 @@
       <div class="hero-text">
         <img class="mark" src="assets/img/natel-mark.svg" alt="" width="56" height="56">
         <p class="wordmark"><img src="assets/img/natel-wordmark-white.svg" alt="Natel" width="480" height="202"></p>
-        <h1 class="headline">A self-hosted CardDAV contact editor.</h1>
+        <!-- The slogan states the value; the lead defines Natel and its tested scope. -->
+        <h1 class="headline">The contact editor your CardDAV server is missing.</h1>
         <p class="lede">
-          A lightweight web app for your existing CardDAV server. Browse and
-          edit the contacts you already sync with your phone and desktop.
+          Natel is a lightweight, self-hosted web app for editing contacts on your
+          existing CardDAV server. Tested with Baïkal, Radicale and Xandikos.
         </p>
         <div class="actions">
           <a class="button primary" href="https://demo.natel.app/contacts">Try the demo</a>
@@ -203,14 +209,27 @@
 
             <div class="panel" id="docker" data-panel>
               <h3 class="panel-title">Docker</h3>
-              <p>In a <code>compose.yaml</code>, set <code>CARDDAV_URL</code> to your CardDAV server's origin:</p>
-<pre tabindex="0"><code>services:
-  natel:
-    image: ghcr.io/kewindousse/natel:0.4
-    environment:
-      CARDDAV_URL: https://dav.example.com
-    ports:
-      - "127.0.0.1:8080:8080"</code></pre>
+              <p id="carddav-url-hint">In a <code>compose.yaml</code>, set <code>CARDDAV_URL</code> to your CardDAV server's origin:</p>
+              <div class="code-example" data-code-example data-filename="compose.yaml">
+                <div class="code-actions" data-code-actions hidden>
+                  <button class="code-action" type="button" data-copy-code aria-label="Copy compose.yaml" title="Copy compose.yaml">
+                    <svg class="code-icon code-icon-copy" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                    <svg class="code-icon code-icon-success" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg>
+                    <svg class="code-icon code-icon-error" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M6 18 18 6"/></svg>
+                  </button>
+                  <button class="code-action" type="button" data-download-code aria-label="Download compose.yaml" title="Download compose.yaml">
+                    <svg class="code-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M5 21h14"/></svg>
+                  </button>
+                </div>
+                <span class="visually-hidden" role="status" data-code-status></span>
+<pre tabindex="0" aria-label="compose.yaml" aria-describedby="carddav-url-hint"><code><span class="yaml-key">services</span>:
+  <span class="yaml-key">natel</span>:
+    <span class="yaml-key">image</span>: <span class="yaml-string">ghcr.io/kewindousse/natel:0.4</span>
+    <span class="yaml-key">environment</span>:
+      <span class="yaml-key">CARDDAV_URL</span>: <mark class="code-placeholder">https://dav.example.com</mark>
+    <span class="yaml-key">ports</span>:
+      - <span class="yaml-string">"127.0.0.1:8080:8080"</span></code></pre>
+              </div>
 <pre><code>docker compose up -d</code></pre>
               <p>Then open <code>http://localhost:8080</code> and sign in with your CardDAV account. For HTTPS, reverse proxies and other options, see the <a href="https://github.com/KewinDousse/natel/blob/main/docs/deployment.md">deployment guide</a>.</p>
             </div>

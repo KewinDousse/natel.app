@@ -55,3 +55,76 @@ for (const box of document.querySelectorAll("[data-tabs]")) {
   box.classList.add("is-tabs");
   select(0, false);
 }
+
+async function copyCode(text) {
+  if (navigator.clipboard?.writeText) {
+    try {
+      await navigator.clipboard.writeText(text);
+      return;
+    } catch {
+      // Selection-based copying also works on local HTTP previews.
+    }
+  }
+
+  const input = document.createElement("textarea");
+  input.className = "copy-buffer";
+  input.value = text;
+  input.readOnly = true;
+  document.body.append(input);
+  try {
+    input.select();
+    if (!document.execCommand("copy")) throw new Error("Copy unavailable");
+  } finally {
+    input.remove();
+  }
+}
+
+for (const box of document.querySelectorAll("[data-code-example]")) {
+  const code = box.querySelector("pre code");
+  const copy = box.querySelector("[data-copy-code]");
+  const download = box.querySelector("[data-download-code]");
+  const status = box.querySelector("[data-code-status]");
+  const filename = box.dataset.filename;
+  let reset;
+
+  // Both actions read the displayed code to keep one source of truth.
+  const text = () => `${code.textContent.trimEnd()}\n`;
+
+  copy.addEventListener("click", async () => {
+    clearTimeout(reset);
+    copy.disabled = true;
+    status.textContent = "";
+    try {
+      await copyCode(text());
+      copy.dataset.state = "copied";
+      copy.title = "Copied";
+      status.textContent = `${filename} copied to clipboard.`;
+    } catch {
+      copy.dataset.state = "failed";
+      copy.title = "Copy failed";
+      status.textContent = "Copy unavailable. Select and copy the code below.";
+    } finally {
+      copy.disabled = false;
+      copy.focus({ preventScroll: true });
+      reset = setTimeout(() => {
+        delete copy.dataset.state;
+        copy.title = `Copy ${filename}`;
+      }, 3000);
+    }
+  });
+
+  download.addEventListener("click", () => {
+    const file = new Blob([text()], { type: "application/yaml;charset=utf-8" });
+    const url = URL.createObjectURL(file);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = filename;
+    document.body.append(link);
+    link.click();
+    link.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+    status.textContent = `Download of ${filename} started.`;
+  });
+
+  box.querySelector("[data-code-actions]").hidden = false;
+}
