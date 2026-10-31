@@ -22,6 +22,22 @@ The demo is hosted on a separate subdomain. Its indexing policy belongs to the
 application's demo build, not this website's robots file. Keep it crawlable so
 search engines can read its `noindex` directive.
 
+## Structured data
+
+The homepage's JSON-LD links the `WebSite`, its English `WebPage` and the
+`WebApplication` through stable IDs. The app's `inLanguage` lists its English and
+French interfaces; the page's language describes its actual text. Keep the page
+title, description and images aligned with the HTML and visible content.
+
+## llms.txt
+
+The root `llms.txt` follows the [llms.txt proposal](https://llmstxt.org/) and links
+to the existing overview, demo and project documentation. The homepage advertises
+it with `rel="describedby"`. Update its summary and links when the product's scope
+or documentation changes; keep version-specific details in the linked documents.
+It does not set crawler permissions or guarantee citations. Google says it is
+not needed for [AI features in Search](https://developers.google.com/search/docs/appearance/ai-features).
+
 ## References
 
 Checked on 28 October 2026:

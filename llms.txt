@@ -1,0 +1,27 @@
+# Natel
+
+> Natel is a lightweight, self-hosted web app for editing contacts on an existing CardDAV server. It is open source under the MIT license and tested with Baïkal, Radicale and Xandikos.
+
+Natel requires an existing CardDAV server and account. It edits contacts; it does
+not host address books or provide calendars, tasks or offline mode. Its interface
+supports English and French. The demo uses made-up contacts and resets edits on
+reload.
+
+## Project
+
+- [Overview](https://natel.app/): Features, data handling and self-hosting instructions.
+- [Source and README](https://github.com/KewinDousse/natel): Source code, requirements and quick start.
+- [Demo](https://demo.natel.app/contacts): Try the editor with made-up contacts.
+
+## Documentation
+
+- [User guide](https://github.com/KewinDousse/natel/blob/main/docs/user-guide.md): Contacts, photos, groups, imports, exports and conflicts.
+- [Deployment](https://github.com/KewinDousse/natel/blob/main/docs/deployment.md): Docker setup, HTTPS, configuration and updates.
+- [Running without Docker](https://github.com/KewinDousse/natel/blob/main/docs/bare-metal.md): Build and run the app with Caddy and the session process.
+- [Compatibility](https://github.com/KewinDousse/natel/blob/main/docs/compatibility.md): Tested servers and clients, group formats and known limits.
+- [Troubleshooting](https://github.com/KewinDousse/natel/blob/main/docs/troubleshooting.md): Sign-in, server discovery, photos and support.
+
+## Optional
+
+- [Changelog](https://github.com/KewinDousse/natel/blob/main/CHANGELOG.md): Release history and upgrade notes.
+- [Architecture](https://github.com/KewinDousse/natel/blob/main/docs/ARCHITECTURE.md): Static app, CardDAV proxy and in-memory sign-in sessions.

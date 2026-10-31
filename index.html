@@ -13,6 +13,7 @@
   <meta name="theme-color" content="#A11F18" media="(prefers-color-scheme: dark)">
   <!-- Each published page needs its own canonical and matching og:url. -->
   <link rel="canonical" href="https://natel.app/">
+  <link rel="describedby" href="/llms.txt" type="text/plain">
   <link rel="icon" href="/favicon.ico" sizes="48x48">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -38,22 +39,47 @@
   <meta name="twitter:description" content="Natel is a lightweight, self-hosted web app for editing contacts on your existing CardDAV server. Tested with Baïkal, Radicale and Xandikos.">
   <meta name="twitter:image" content="https://natel.app/assets/img/og-image-en.png">
   <meta name="twitter:image:alt" content="Natel wordmark and the slogan “The contact editor your CardDAV server is missing.” beside a screenshot of the contact list and a contact’s page.">
-<!-- JSON-LD describes the app using the visible lead, without duplicate microdata.
-     References from other pages share this app @id; inLanguage is the app's UI. -->
+<!-- Stable IDs connect the English page and website to the bilingual app. -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "@id": "https://natel.app/#application",
-  "name": "Natel",
-  "url": "https://natel.app/",
-  "description": "Natel is a lightweight, self-hosted web app for editing contacts on your existing CardDAV server. Tested with Baïkal, Radicale and Xandikos.",
-  "applicationCategory": "UtilitiesApplication",
-  "softwareRequirements": "An existing CardDAV server and account.",
-  "inLanguage": ["en", "fr"],
-  "isAccessibleForFree": true,
-  "license": "https://github.com/KewinDousse/natel/blob/main/LICENSE",
-  "sameAs": "https://github.com/KewinDousse/natel"
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://natel.app/#website",
+      "name": "Natel",
+      "url": "https://natel.app/",
+      "inLanguage": "en",
+      "about": { "@id": "https://natel.app/#application" }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://natel.app/#webpage",
+      "url": "https://natel.app/",
+      "name": "Natel: self-hosted CardDAV web contact editor",
+      "description": "Natel is a lightweight, self-hosted web app for editing contacts on your existing CardDAV server. Tested with Baïkal, Radicale and Xandikos.",
+      "inLanguage": "en",
+      "isPartOf": { "@id": "https://natel.app/#website" },
+      "mainEntity": { "@id": "https://natel.app/#application" },
+      "image": "https://natel.app/assets/img/og-image-en.png"
+    },
+    {
+      "@type": "WebApplication",
+      "@id": "https://natel.app/#application",
+      "name": "Natel",
+      "url": "https://natel.app/",
+      "description": "Natel is a lightweight, self-hosted web app for editing contacts on your existing CardDAV server. Tested with Baïkal, Radicale and Xandikos.",
+      "applicationCategory": "UtilitiesApplication",
+      "softwareRequirements": "An existing CardDAV server and account.",
+      "inLanguage": ["en", "fr"],
+      "isAccessibleForFree": true,
+      "license": "https://github.com/KewinDousse/natel/blob/main/LICENSE",
+      "sameAs": "https://github.com/KewinDousse/natel",
+      "image": "https://natel.app/assets/img/natel-mark.svg",
+      "screenshot": "https://natel.app/assets/img/desktop-light.webp",
+      "mainEntityOfPage": { "@id": "https://natel.app/#webpage" }
+    }
+  ]
 }
 </script>
 </head>
