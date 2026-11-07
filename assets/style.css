@@ -735,3 +735,20 @@ footer a { color: var(--ink); }
 @media (max-width: 60rem) {
   footer nav { padding-left: 2.75rem; }
 }
+
+/* Page not found: a full-height hero, red at every width. */
+
+.not-found {
+  min-height: 100dvh;
+  background: var(--surface);
+}
+.not-found .wrap { display: block; padding-top: clamp(4rem, 14vh, 7rem); }
+.not-found .hero-text { padding-bottom: 0; }
+.not-found-code {
+  margin: 0;
+  max-width: none;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(8rem, 30vw, 15rem);
+  line-height: 0.9;
+}

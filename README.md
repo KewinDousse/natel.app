@@ -16,6 +16,7 @@ python3 -m http.server 8000 --bind 127.0.0.1
 
 - `index.html`: the page. Its facts come from the main repository's README
   and `docs/`; update them together.
+- `404.html`: the page Caddy answers with when a file doesn't exist.
 - `assets/style.css`: styles, with the app's colours from `src/index.css`.
 - `assets/tabs.js`: turns the Docker and bare-metal instructions into
   tabs. Without it, both show one after the other. It is a file rather
