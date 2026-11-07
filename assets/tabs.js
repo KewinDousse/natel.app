@@ -85,10 +85,12 @@ for (const box of document.querySelectorAll("[data-code-example]")) {
   const download = box.querySelector("[data-download-code]");
   const status = box.querySelector("[data-code-status]");
   const filename = box.dataset.filename;
+  const name = filename ?? "command";
   let reset;
 
-  // Both actions read the displayed code to keep one source of truth.
-  const text = () => `${code.textContent.trimEnd()}\n`;
+  // Both actions read the displayed code to keep one source of truth. A command
+  // has no final newline, which would run it as soon as it is pasted.
+  const text = () => `${code.textContent.trimEnd()}${filename ? "\n" : ""}`;
 
   copy.addEventListener("click", async () => {
     clearTimeout(reset);
@@ -98,7 +100,7 @@ for (const box of document.querySelectorAll("[data-code-example]")) {
       await copyCode(text());
       copy.dataset.state = "copied";
       copy.title = "Copied";
-      status.textContent = `${filename} copied to clipboard.`;
+      status.textContent = `${name} copied to clipboard.`;
     } catch {
       copy.dataset.state = "failed";
       copy.title = "Copy failed";
@@ -108,12 +110,12 @@ for (const box of document.querySelectorAll("[data-code-example]")) {
       copy.focus({ preventScroll: true });
       reset = setTimeout(() => {
         delete copy.dataset.state;
-        copy.title = `Copy ${filename}`;
+        copy.title = `Copy ${name}`;
       }, 3000);
     }
   });
 
-  download.addEventListener("click", () => {
+  download?.addEventListener("click", () => {
     const file = new Blob([text()], { type: "application/yaml;charset=utf-8" });
     const url = URL.createObjectURL(file);
     const link = document.createElement("a");
