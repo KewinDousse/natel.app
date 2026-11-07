@@ -1,6 +1,6 @@
 # Natel
 
-> Natel is a lightweight, self-hosted web app for editing contacts on an existing CardDAV server. It is open source under the MIT license and tested with Baïkal, Radicale and Xandikos.
+> Natel is a lightweight, self-hosted web app for editing contacts on an existing CardDAV server. It is open source under the MIT license and tested with Baïkal, Radicale, Xandikos and Nextcloud.
 
 Natel requires an existing CardDAV server and account. It edits contacts; it does
 not host address books or provide calendars, tasks or offline mode. Its interface
