@@ -100,7 +100,7 @@ for (const box of document.querySelectorAll("[data-code-example]")) {
       await copyCode(text());
       copy.dataset.state = "copied";
       copy.title = "Copied";
-      status.textContent = `${name} copied to clipboard.`;
+      status.textContent = `${filename ?? "Command"} copied to clipboard.`;
     } catch {
       copy.dataset.state = "failed";
       copy.title = "Copy failed";
