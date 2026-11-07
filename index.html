@@ -168,7 +168,7 @@
             </div>
             <div>
               <dt><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M5 21h14"/></svg>Import and export</dt>
-              <dd>Import a <code>.vcf</code> file into a book, or export a whole book.</dd>
+              <dd>Import a <code>.vcf</code> file into a book, with a preview that flags likely duplicates, or export a whole book.</dd>
             </div>
             <div>
               <dt><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>iPhone and Android</dt>
@@ -198,7 +198,7 @@
             </li>
             <li>
               <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
-              <p><strong>Tested against real servers.</strong> The end-to-end suite runs in CI against Baïkal, Radicale and Xandikos. Nextcloud and other servers aren't in it: see <a href="https://github.com/KewinDousse/natel/blob/main/docs/compatibility.md">compatibility</a>.</p>
+              <p><strong>Tested against real servers.</strong> The end-to-end suite runs in CI against Baïkal, Radicale, Xandikos and Nextcloud. Other servers aren't in it: see <a href="https://github.com/KewinDousse/natel/blob/main/docs/compatibility.md">compatibility</a>.</p>
             </li>
             <li>
               <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
@@ -250,7 +250,7 @@
                 <span class="visually-hidden" role="status" data-code-status></span>
 <pre tabindex="0" aria-label="compose.yaml" aria-describedby="carddav-url-hint"><code><span class="yaml-key">services</span>:
   <span class="yaml-key">natel</span>:
-    <span class="yaml-key">image</span>: <span class="yaml-string">ghcr.io/kewindousse/natel:0.4</span>
+    <span class="yaml-key">image</span>: <span class="yaml-string">ghcr.io/kewindousse/natel:0.5</span>
     <span class="yaml-key">environment</span>:
       <span class="yaml-key">CARDDAV_URL</span>: <mark class="code-placeholder">https://dav.example.com</mark>
     <span class="yaml-key">ports</span>:
