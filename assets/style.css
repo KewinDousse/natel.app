@@ -54,6 +54,10 @@
   --page: 76rem;
   --content: 58rem;
   --gutter: max(16px, 4vw);
+  --radius-small: 4px;
+  --radius: 10px;
+  --radius-large: 14px;
+  --radius-pill: 999px;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
@@ -133,7 +137,7 @@ a:hover {
 :focus-visible {
   outline: 2px solid var(--ink);
   outline-offset: 3px;
-  border-radius: 2px;
+  border-radius: var(--radius-small);
 }
 
 code {
@@ -141,7 +145,7 @@ code {
   font-size: 0.9em;
   background: var(--wash);
   padding: 0.05em 0.3em;
-  border-radius: 4px;
+  border-radius: var(--radius-small);
 }
 
 /* On the right, where the hero has no content to cover. */
@@ -153,7 +157,7 @@ code {
   background: var(--paper);
   color: var(--ink);
   padding: 0.5rem 1rem;
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   box-shadow: 0 0 0 2px var(--surface);
 }
 .skip:focus { top: 0.5rem; }
@@ -182,7 +186,7 @@ code {
 .mark {
   width: 3.5rem;
   height: 3.5rem;
-  border-radius: 0.8rem;
+  border-radius: var(--radius-large);
   /* White keyline so the band stays visible on red (brand kit rule). */
   box-shadow: 0 0 0 2px var(--on-surface);
 }
@@ -216,7 +220,7 @@ code {
   align-items: center;
   min-height: 3rem;
   padding: 0.6rem 1.4rem;
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   font-weight: 700;
   text-decoration: none;
   border: 2px solid var(--on-surface);
@@ -277,7 +281,7 @@ code {
 .shots-figure { margin: 0; }
 .composition { position: relative; }
 .window {
-  border-radius: 0.875rem;
+  border-radius: var(--radius-large);
   overflow: hidden;
   background: var(--paper);
 }
@@ -288,7 +292,7 @@ code {
   display: none;
   aspect-ratio: 390 / 744;
   overflow: hidden;
-  border-radius: 1rem;
+  border-radius: var(--radius-large);
   box-shadow: 0 0 0 6px var(--surface);
 }
 
@@ -541,7 +545,7 @@ p:last-child { margin-bottom: 0; }
 }
 .is-tabs .panel { padding-top: 1.25rem; }
 .is-tabs .panel + .panel { margin-top: 0; }
-.is-tabs .panel:focus-visible { outline-offset: 6px; border-radius: 4px; }
+.is-tabs .panel:focus-visible { outline-offset: 6px; border-radius: var(--radius-small); }
 .plain-steps {
   margin: 0.75rem 0 0;
   padding-left: 1.25rem;
@@ -555,7 +559,7 @@ p:last-child { margin-bottom: 0; }
   padding: 0.9rem 1rem;
   border: 1px solid color-mix(in srgb, var(--warning) 40%, transparent);
   background: color-mix(in srgb, var(--warning) 5%, transparent);
-  border-radius: 0.625rem;
+  border-radius: var(--radius);
 }
 .callout strong { font-weight: 700; }
 
@@ -565,7 +569,7 @@ pre {
   padding: 0.9rem 1rem;
   background: var(--wash);
   border: 1px solid var(--rule);
-  border-radius: 0.625rem;
+  border-radius: var(--radius);
   overflow-x: auto;
   font-family: var(--font-mono);
   font-size: 0.875rem;
@@ -583,7 +587,7 @@ pre code { background: none; padding: 0; font-size: inherit; }
   margin-top: 0.6rem;
   max-width: 50rem;
   border: 1px solid var(--rule);
-  border-radius: 0.625rem;
+  border-radius: var(--radius);
   overflow: hidden;
   background: var(--wash);
 }
@@ -602,7 +606,7 @@ pre code { background: none; padding: 0; font-size: inherit; }
   height: 2rem;
   padding: 0;
   border: 1px solid var(--rule);
-  border-radius: 0.375rem;
+  border-radius: var(--radius-small);
   background: var(--wash);
   color: var(--muted);
   cursor: pointer;
@@ -653,7 +657,7 @@ pre code { background: none; padding: 0; font-size: inherit; }
 }
 .code-placeholder {
   padding: 0.1rem 0.125rem;
-  border-radius: 0.2rem;
+  border-radius: var(--radius-small);
   background: color-mix(in srgb, var(--code-key) 12%, transparent);
   color: var(--ink);
 }
