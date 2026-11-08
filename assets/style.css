@@ -52,6 +52,8 @@
   --font-mono: ui-monospace, "SF Mono", "Cascadia Mono", Menlo, Consolas, monospace;
   --measure: 66ch;
   --page: 76rem;
+  /* The page's width, the hero's text keeping the sections' left edge. */
+  --wrap-max: var(--page);
   --content: 58rem;
   --gutter: max(16px, 4vw);
   --radius-small: 4px;
@@ -163,7 +165,7 @@ code {
 .skip:focus { top: 0.5rem; }
 
 .wrap {
-  max-width: var(--page);
+  max-width: var(--wrap-max);
   margin-inline: auto;
   padding-inline: var(--gutter);
 }
@@ -183,13 +185,6 @@ code {
   max-width: 44rem;
   align-content: start;
 }
-.mark {
-  width: 3.5rem;
-  height: 3.5rem;
-  border-radius: var(--radius-large);
-  /* White keyline so the band stays visible on red (brand kit rule). */
-  box-shadow: 0 0 0 2px var(--on-surface);
-}
 .wordmark {
   margin: 0.25rem 0 0;
   line-height: 1;
@@ -197,7 +192,7 @@ code {
 .wordmark img { width: clamp(12rem, 34vw, 19rem); }
 .headline {
   margin: 0;
-  font-size: clamp(1.375rem, 2.6vw, 1.875rem);
+  font-size: clamp(1.5rem, 3vw, 2rem);
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: -0.01em;
@@ -233,6 +228,12 @@ code {
 .button.primary:hover { background: transparent; color: var(--on-surface); }
 .button.secondary { color: var(--on-surface); }
 .button.secondary:hover { background: var(--on-surface); color: var(--surface); }
+.hero-note {
+  margin: 0;
+  font-size: 0.9375rem;
+}
+.hero-note a { color: inherit; }
+.actions + .hero-note { margin-top: 0.25rem; }
 
 /* The thumb index of a paper address book, as on the brand images. */
 .tabs { display: none; }
@@ -267,34 +268,26 @@ code {
   .skip { right: calc(var(--gutter) + 5.5rem); }
 }
 
-/* Screenshots, in the hero. The desktop window always shows, since Natel is
-   used from a computer: a phone alone would read as a rival to the phone's
-   own contacts app. The phone joins it where there is room. Where the whole
-   window would shrink too far, it shows its left part, the list and the start
-   of a contact's page. */
+/* Screenshots, in the hero. The desktop window shows, since Natel is used
+   from a computer: a phone alone would read as a rival to the phone's own
+   contacts app. It stays large enough to read: where the whole window would
+   shrink too far, it shows its left part. */
 
 .hero .wrap {
   padding-block: clamp(2rem, 4vw, 3.5rem);
   display: grid;
   gap: 2.5rem;
 }
-.shots-figure { margin: 0; }
-.composition { position: relative; }
+.shots-figure { position: relative; margin: 0; }
 .window {
   border-radius: var(--radius-large);
   overflow: hidden;
   background: var(--paper);
 }
-.window img, .phone img { width: 100%; }
-.window.cropped { aspect-ratio: 980 / 700; }
-.window.cropped img { width: calc(100% * 1280 / 980); max-width: none; }
-.phone {
-  display: none;
-  aspect-ratio: 390 / 744;
-  overflow: hidden;
-  border-radius: var(--radius-large);
-  box-shadow: 0 0 0 6px var(--surface);
-}
+.window img { width: 100%; max-width: none; }
+/* Phones: the header and the top of the list, at about 70% of their size. */
+.window.cropped { aspect-ratio: 515 / 490; }
+.window.cropped img { width: calc(100% * 1280 / 515); }
 
 /* Phones: the red ends under the buttons and the shot sits on white,
    overlapping the band's edge a little. */
@@ -314,35 +307,29 @@ code {
   .actions .button { width: 100%; justify-content: center; }
 }
 
-/* Tablets: a compact window below the text, with the phone at its lower right. */
+/* Tablets and narrower desktops: the list and most of a contact's page. */
+@media (min-width: 48rem) {
+  .window.cropped { aspect-ratio: 900 / 700; }
+  .window.cropped img { width: calc(100% * 1280 / 900); }
+}
 @media (min-width: 48rem) and (max-width: 63.99rem) {
-  .window.cropped { aspect-ratio: auto; }
-  .window.cropped img { width: 100%; }
-  .composition { max-width: 40rem; margin-inline: auto; }
-  .window { width: calc(100% - 4rem); }
-  .phone {
-    display: block;
-    position: absolute;
-    right: 0;
-    bottom: -1.5rem;
-    width: 11rem;
-  }
-  .shots-figure { padding-bottom: 1.5rem; }
+  .shots-figure { width: 100%; max-width: 40rem; margin-inline: auto; }
 }
 
+/* Wide screens: the window rises from the hero's bottom edge up beside the
+   text and runs to the tabs. */
 @media (min-width: 64rem) {
-  .headline {
-    margin-bottom: 0.5rem;
-  }
-}
-
-/* Wide screens: the text beside the window's left part. */
-@media (min-width: 64rem) and (max-width: 89.99rem) {
   .hero .wrap {
+    max-width: none;
+    padding: 0 5.5rem 0 calc(max(0px, (100% - var(--wrap-max)) / 2) + var(--gutter));
     grid-template-columns: 23.5rem minmax(0, 1fr);
-    align-items: center;
     column-gap: 2.5rem;
+    align-items: stretch;
   }
+  .hero-text { align-self: center; padding-block: 3rem; }
+  .headline { margin-bottom: 0.5rem; }
+  .shots-figure { align-self: end; margin-top: 3rem; }
+  .window { border-radius: var(--radius-large) 0 0 0; }
 }
 
 @media (min-width: 64rem) and (max-width: 71.99rem) {
@@ -355,31 +342,13 @@ code {
   }
 }
 
-/* From 90rem the composition takes everything right of a 24rem text
-   column, up to 2rem short of the tabs, capped at 60rem. */
+/* From 90rem the window shows whole. */
 @media (min-width: 90rem) {
-  .headline { font-size: 1.625rem; max-width: none; }
-  .wrap {
-    max-width: calc(var(--gutter) + 86.5rem + 6.5rem);
-    padding-right: 6.5rem;
-  }
-  .hero .wrap {
-    grid-template-columns: 24rem minmax(0, 60rem);
-    align-items: center;
-    column-gap: 2.5rem;
-  }
+  :root { --wrap-max: calc(var(--gutter) + 93rem); }
+  .wrap { padding-right: 6.5rem; }
+  .hero .wrap { grid-template-columns: 24rem minmax(0, 1fr); }
   .window.cropped { aspect-ratio: auto; }
   .window.cropped img { width: 100%; }
-  /* Keep controls visible and reserve room down to the phone's bottom. */
-  .shots-figure { min-height: calc(9.5rem + 15rem * 744 / 390); }
-  .window { width: calc(100% - 13.2rem); }
-  .phone {
-    display: block;
-    position: absolute;
-    right: 0;
-    top: 9.5rem;
-    width: 15rem;
-  }
 }
 
 /* Sections */
