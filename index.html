@@ -19,7 +19,7 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="preload" href="assets/fonts/work-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
   <!-- A content hash keeps cached styles aligned with this page. -->
-  <link rel="stylesheet" href="assets/style.css?v=824c192ee591">
+  <link rel="stylesheet" href="assets/style.css?v=2a87cdc31a0c">
   <script src="assets/tabs.js?v=3e4f7ae360ea" defer></script>
 
   <!-- Homepage previews use the slogan as the hook and the lead as a factual summary. -->
@@ -104,12 +104,16 @@
         <p class="hero-note"><strong>Beta software.</strong> Export your address books before your first edit.</p>
       </div>
       <figure class="shots-figure">
-        <div class="window cropped">
+        <div class="window">
           <picture>
-            <source type="image/webp" sizes="(min-width: 90rem) calc(100vw - 32rem), (min-width: 64rem) calc((100vw - 34rem) * 1280 / 900), (min-width: 48rem) calc(min(40rem, 100vw - 8rem) * 1280 / 900), calc((100vw - 2rem) * 1280 / 515)" media="(prefers-color-scheme: dark)" srcset="assets/img/desktop-dark.webp 1280w, assets/img/desktop-dark@2x.webp 2560w">
-            <source sizes="(min-width: 90rem) calc(100vw - 32rem), (min-width: 64rem) calc((100vw - 34rem) * 1280 / 900), (min-width: 48rem) calc(min(40rem, 100vw - 8rem) * 1280 / 900), calc((100vw - 2rem) * 1280 / 515)" media="(prefers-color-scheme: dark)" srcset="assets/img/desktop-dark.png 1280w, assets/img/desktop-dark@2x.png 2560w">
-            <source type="image/webp" sizes="(min-width: 90rem) calc(100vw - 32rem), (min-width: 64rem) calc((100vw - 34rem) * 1280 / 900), (min-width: 48rem) calc(min(40rem, 100vw - 8rem) * 1280 / 900), calc((100vw - 2rem) * 1280 / 515)" srcset="assets/img/desktop-light.webp 1280w, assets/img/desktop-light@2x.webp 2560w">
-            <img sizes="(min-width: 90rem) calc(100vw - 32rem), (min-width: 64rem) calc((100vw - 34rem) * 1280 / 900), (min-width: 48rem) calc(min(40rem, 100vw - 8rem) * 1280 / 900), calc((100vw - 2rem) * 1280 / 515)" fetchpriority="high" src="assets/img/desktop-light.png" srcset="assets/img/desktop-light.png 1280w, assets/img/desktop-light@2x.png 2560w" width="1280" height="900" alt="Natel on a desktop screen: the contact list grouped by letter on the left, with a phone number or email on each row, and Caitlyn Kiramman's page on the right, with Call, Text and Email buttons, her phone, email, birthday and group.">
+            <source width="390" height="806" type="image/webp" sizes="calc(100vw - 2rem)" media="(max-width: 47.99rem) and (prefers-color-scheme: dark)" srcset="assets/img/phone-dark.webp 390w, assets/img/phone-dark@2x.webp 780w">
+            <source width="390" height="806" sizes="calc(100vw - 2rem)" media="(max-width: 47.99rem) and (prefers-color-scheme: dark)" srcset="assets/img/phone-dark.png 390w, assets/img/phone-dark@2x.png 780w">
+            <source width="390" height="806" type="image/webp" sizes="calc(100vw - 2rem)" media="(max-width: 47.99rem)" srcset="assets/img/phone-light.webp 390w, assets/img/phone-light@2x.webp 780w">
+            <source width="390" height="806" sizes="calc(100vw - 2rem)" media="(max-width: 47.99rem)" srcset="assets/img/phone-light.png 390w, assets/img/phone-light@2x.png 780w">
+            <source type="image/webp" sizes="(min-width: 80rem) calc(100vw - 37.5rem), (min-width: 48rem) min(52rem, 100vw - 9rem), calc(100vw - 2rem)" media="(prefers-color-scheme: dark)" srcset="assets/img/desktop-dark.webp 1024w, assets/img/desktop-dark@2x.webp 2048w">
+            <source sizes="(min-width: 80rem) calc(100vw - 37.5rem), (min-width: 48rem) min(52rem, 100vw - 9rem), calc(100vw - 2rem)" media="(prefers-color-scheme: dark)" srcset="assets/img/desktop-dark.png 1024w, assets/img/desktop-dark@2x.png 2048w">
+            <source type="image/webp" sizes="(min-width: 80rem) calc(100vw - 37.5rem), (min-width: 48rem) min(52rem, 100vw - 9rem), calc(100vw - 2rem)" srcset="assets/img/desktop-light.webp 1024w, assets/img/desktop-light@2x.webp 2048w">
+            <img sizes="(min-width: 80rem) calc(100vw - 37.5rem), (min-width: 48rem) min(52rem, 100vw - 9rem), calc(100vw - 2rem)" fetchpriority="high" src="assets/img/desktop-light.png" srcset="assets/img/desktop-light.png 1024w, assets/img/desktop-light@2x.png 2048w" width="1024" height="720" alt="Natel's contact list grouped by letter, with a phone number or email on each row, and on wider screens Caitlyn Kiramman's page beside it, with Call, Text and Email buttons, her phone, email, birthday and group.">
           </picture>
         </div>
       </figure>
@@ -324,6 +328,21 @@
           </div>
 
           <p class="callout"><strong>Beta software.</strong> Export your address books, or back up your server, before your first edit.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" aria-labelledby="faq-title">
+      <div class="wrap">
+        <h2 id="faq-title">Questions</h2>
+        <div class="section-body">
+          <dl class="faq">
+            <div><dt>Does Natel store my contacts?</dt><dd>No. They stay on your CardDAV server. Natel reads and writes them there, as your phone does.</dd></div>
+            <div><dt>Which servers does it work with?</dt><dd>Baïkal, Radicale, Xandikos and Nextcloud are tested in CI. SOGo has a known bug with deletes. Others aren't tested yet: see <a href="https://github.com/KewinDousse/natel/blob/main/docs/compatibility.md">compatibility</a>.</dd></div>
+            <div><dt>Can I try it first?</dt><dd>Yes. The <a href="https://demo.natel.app/contacts">demo</a> runs on sample contacts, with nothing to install.</dd></div>
+            <div><dt>Does it work offline?</dt><dd>No. Natel needs a connection to your server.</dd></div>
+            <div><dt>What does it cost?</dt><dd>Nothing. Natel is open source, under the MIT license.</dd></div>
+          </dl>
         </div>
       </div>
     </section>

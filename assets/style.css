@@ -268,10 +268,10 @@ code {
   .skip { right: calc(var(--gutter) + 5.5rem); }
 }
 
-/* Screenshots, in the hero. The desktop window shows, since Natel is used
-   from a computer: a phone alone would read as a rival to the phone's own
-   contacts app. It stays large enough to read: where the whole window would
-   shrink too far, it shows its left part. */
+/* Screenshots, in the hero. The desktop window shows whole, since Natel is
+   used from a computer: a phone alone would read as a rival to the phone's
+   own contacts app. Under 48rem, where that window would shrink too far to
+   read, the phone's list takes its place. */
 
 .hero .wrap {
   padding-block: clamp(2rem, 4vw, 3.5rem);
@@ -283,14 +283,12 @@ code {
   border-radius: var(--radius-large);
   overflow: hidden;
   background: var(--paper);
+  box-shadow: 0 1.5rem 3rem rgb(0 0 0 / 0.28);
 }
 .window img { width: 100%; max-width: none; }
-/* Phones: the header and the top of the list, at about 70% of their size. */
-.window.cropped { aspect-ratio: 515 / 490; }
-.window.cropped img { width: calc(100% * 1280 / 515); }
 
-/* Phones: the red ends under the buttons and the shot sits on white,
-   overlapping the band's edge a little. */
+/* Phones: the red ends under the buttons and the list sits on white,
+   overlapping the band's edge a little, then fades out as it would scroll. */
 @media (max-width: 47.99rem) {
   .hero { background: var(--paper); }
   .hero-text {
@@ -300,55 +298,49 @@ code {
     padding-bottom: 4.5rem;
   }
   .shots-figure { margin-top: -4rem; }
-  .window { outline: 1px solid var(--rule); }
+  .window {
+    aspect-ratio: 390 / 560;
+    box-shadow: none;
+    -webkit-mask-image: linear-gradient(#000 70%, transparent);
+    mask-image: linear-gradient(#000 70%, transparent);
+  }
+  .window img { height: 100%; object-fit: cover; object-position: top; }
 }
 
 @media (max-width: 23.99rem) {
   .actions .button { width: 100%; justify-content: center; }
 }
 
-/* Tablets and narrower desktops: the list and most of a contact's page. */
-@media (min-width: 48rem) {
-  .window.cropped { aspect-ratio: 900 / 700; }
-  .window.cropped img { width: calc(100% * 1280 / 900); }
-}
 @media (min-width: 48rem) and (max-width: 63.99rem) {
   .shots-figure { width: 100%; max-width: 40rem; margin-inline: auto; }
 }
 
-/* Wide screens: the window rises from the hero's bottom edge up beside the
-   text and runs to the tabs. */
+/* Wide screens: the window beside the text, clear of the tabs, so a light
+   window doesn't run into the white tab. */
 @media (min-width: 64rem) {
   .hero .wrap {
     max-width: none;
-    padding: 0 5.5rem 0 calc(max(0px, (100% - var(--wrap-max)) / 2) + var(--gutter));
-    grid-template-columns: 23.5rem minmax(0, 1fr);
-    column-gap: 2.5rem;
-    align-items: stretch;
+    padding: 3rem 5.5rem 3rem calc(max(0px, (100% - var(--wrap-max)) / 2) + var(--gutter));
+    grid-template-columns: minmax(0, 1fr);
+    align-items: center;
   }
-  .hero-text { align-self: center; padding-block: 3rem; }
   .headline { margin-bottom: 0.5rem; }
-  .shots-figure { align-self: end; margin-top: 3rem; }
-  .window { border-radius: var(--radius-large) 0 0 0; }
+  .shots-figure { max-width: 52rem; }
 }
 
-@media (min-width: 64rem) and (max-width: 71.99rem) {
+/* From 80rem the window fits beside the text, at a size that reads. */
+@media (min-width: 80rem) {
   .hero .wrap {
-    grid-template-columns: 22rem minmax(0, 1fr);
-    column-gap: 1.5rem;
+    padding-right: calc(5.5rem + 2.5rem);
+    grid-template-columns: 23.5rem minmax(0, 1fr);
   }
-  .actions .button {
-    padding-inline: 1.2rem;
-  }
+  .shots-figure { max-width: none; }
 }
 
-/* From 90rem the window shows whole. */
 @media (min-width: 90rem) {
   :root { --wrap-max: calc(var(--gutter) + 93rem); }
   .wrap { padding-right: 6.5rem; }
   .hero .wrap { grid-template-columns: 24rem minmax(0, 1fr); }
-  .window.cropped { aspect-ratio: auto; }
-  .window.cropped img { width: 100%; }
 }
 
 /* Sections */
@@ -670,6 +662,14 @@ pre code { background: none; padding: 0; font-size: inherit; }
 }
 
 .requirement { margin-top: 1rem; }
+
+/* Questions: short answers to what a newcomer asks first. */
+
+.faq { margin: 0; display: grid; max-width: var(--content); }
+.faq > div { padding-block: 0.9rem; border-top: 1px solid var(--rule); }
+.faq > div:first-child { border-top: 0; padding-top: 0; }
+.faq dt { font-weight: 700; margin-bottom: 0.2rem; }
+.faq dd { margin: 0; max-width: var(--measure); }
 
 /* Footer */
 
