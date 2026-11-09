@@ -19,7 +19,7 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="preload" href="assets/fonts/work-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
   <!-- A content hash keeps cached styles aligned with this page. -->
-  <link rel="stylesheet" href="assets/style.css?v=2a87cdc31a0c">
+  <link rel="stylesheet" href="assets/style.css?v=c8643a39a6de">
   <script src="assets/tabs.js?v=3e4f7ae360ea" defer></script>
 
   <!-- Homepage previews use the slogan as the hook and the lead as a factual summary. -->
@@ -130,6 +130,14 @@
         <h2 id="why-title">Why Natel</h2>
         <div class="section-body">
           <p>A CardDAV server keeps your contacts in sync across devices, but it may have no contact editor in the browser. Natel is that editor, without a groupware suite: contacts only, one container, one server URL.</p>
+          <figure class="flow" aria-label="Your phone, your computer and Natel all read and write the contacts on your CardDAV server.">
+            <div class="node core"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="7" rx="2"/><rect x="3" y="14" width="18" height="7" rx="2"/><path d="M7 6.5h.01M7 17.5h.01"/></svg><strong>Your CardDAV server</strong><span>keeps the contacts</span></div>
+            <div class="clients">
+              <div class="node"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg><strong>Your phone</strong><span>syncs them, as today</span></div>
+              <div class="node"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="11" rx="2"/><path d="M2 20h20"/></svg><strong>Your computer</strong><span>syncs them, as today</span></div>
+              <div class="node natel"><img src="assets/img/natel-mark.svg" alt="" width="20" height="20"><strong>Natel, in a browser</strong><span>edits the same contacts</span></div>
+            </div>
+          </figure>
           <p class="requirement"><strong>You need an existing CardDAV server and account.</strong> Natel edits the contacts already on it, the same ones your phone and desktop use. It doesn't store contacts itself.</p>
           <p class="note">Contacts only: no calendar and no tasks. Natel needs a connection to your server, with no offline mode.</p>
         </div>
@@ -140,60 +148,75 @@
       <div class="wrap">
         <h2 id="features-title">What it does</h2>
         <div class="section-body">
-          <div class="gestures">
-            <figure class="gesture">
-              <picture>
-                <source type="image/webp" sizes="(min-width: 48rem) 46rem, calc(100vw - 2rem)" media="(prefers-color-scheme: dark)" srcset="assets/img/edit-dark.webp 736w, assets/img/edit-dark@2x.webp 1472w">
-                <source sizes="(min-width: 48rem) 46rem, calc(100vw - 2rem)" media="(prefers-color-scheme: dark)" srcset="assets/img/edit-dark.png 736w, assets/img/edit-dark@2x.png 1472w">
-                <source type="image/webp" sizes="(min-width: 48rem) 46rem, calc(100vw - 2rem)" srcset="assets/img/edit-light.webp 736w, assets/img/edit-light@2x.webp 1472w">
-                <img sizes="(min-width: 48rem) 46rem, calc(100vw - 2rem)" loading="lazy" decoding="async" src="assets/img/edit-light.png" srcset="assets/img/edit-light.png 736w, assets/img/edit-light@2x.png 1472w" width="736" height="520" alt="Luxanna Crownguard's contact form: her photo with Change photo and Remove photo buttons, her first and last name, organisation and job title, and her mobile number with its type menu.">
-              </picture>
-              <figcaption><strong>Edit a contact beside the list.</strong> Names, phones, emails, addresses, photo and groups, saved straight to your CardDAV server.</figcaption>
-            </figure>
-            <figure class="gesture">
-              <picture>
-                <source type="image/webp" sizes="(min-width: 48rem) 46rem, calc(100vw - 2rem)" media="(prefers-color-scheme: dark)" srcset="assets/img/groups-dark.webp 736w, assets/img/groups-dark@2x.webp 1472w">
-                <source sizes="(min-width: 48rem) 46rem, calc(100vw - 2rem)" media="(prefers-color-scheme: dark)" srcset="assets/img/groups-dark.png 736w, assets/img/groups-dark@2x.png 1472w">
-                <source type="image/webp" sizes="(min-width: 48rem) 46rem, calc(100vw - 2rem)" srcset="assets/img/groups-light.webp 736w, assets/img/groups-light@2x.webp 1472w">
-                <img sizes="(min-width: 48rem) 46rem, calc(100vw - 2rem)" loading="lazy" decoding="async" src="assets/img/groups-light.png" srcset="assets/img/groups-light.png 736w, assets/img/groups-light@2x.png 1472w" width="736" height="520" alt="The contact list with its group menu open: All groups ticked, then Club, Family, Hextech, Hiking and Neighbours, each with its number of contacts.">
-              </picture>
-              <figcaption><strong>Filter the list by group.</strong> The groups are the group cards Apple and DAVx⁵ use, and a contact's form changes who is in them.</figcaption>
-            </figure>
+          <div class="duo">
+            <div class="half">
+              <h3>Contact</h3>
+              <figure class="shot shot-edit">
+                <picture>
+                  <source type="image/webp" sizes="(min-width: 48rem) 28rem, calc(115vw - 2.3rem)" media="(prefers-color-scheme: dark)" srcset="assets/img/edit-dark.webp 736w, assets/img/edit-dark@2x.webp 1472w">
+                  <source sizes="(min-width: 48rem) 28rem, calc(115vw - 2.3rem)" media="(prefers-color-scheme: dark)" srcset="assets/img/edit-dark.png 736w, assets/img/edit-dark@2x.png 1472w">
+                  <source type="image/webp" sizes="(min-width: 48rem) 28rem, calc(115vw - 2.3rem)" srcset="assets/img/edit-light.webp 736w, assets/img/edit-light@2x.webp 1472w">
+                  <img sizes="(min-width: 48rem) 28rem, calc(115vw - 2.3rem)" loading="lazy" decoding="async" src="assets/img/edit-light.png" srcset="assets/img/edit-light.png 736w, assets/img/edit-light@2x.png 1472w" width="736" height="520" alt="Luxanna Crownguard's contact form: her photo with Change photo and Remove photo buttons, her first and last name, organisation and job title, and her mobile number with its type menu.">
+                </picture>
+              </figure>
+              <dl class="feats">
+                <div>
+                  <dt><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.09-3.09a2 2 0 0 0-2.82 0L6 21"/></svg>Photos</dt>
+                  <dd>Add a photo and crop it. Large photos are scaled down.</dd>
+                </div>
+                <div>
+                  <dt><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/></svg>Details</dt>
+                  <dd>Create, edit or delete a contact: names, phones, emails, addresses, birthdays and notes.</dd>
+                </div>
+                <div>
+                  <dt><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>iPhone and Android</dt>
+                  <dd>Keeps what iPhone and DAVx⁵ write: custom labels, birthdays without a year.</dd>
+                </div>
+                <div>
+                  <dt><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>Add to groups</dt>
+                  <dd>In the group cards Apple and DAVx⁵ use.</dd>
+                </div>
+                <div>
+                  <dt><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>Move to another book</dt>
+                  <dd>Without exporting and importing it again.</dd>
+                </div>
+              </dl>
+            </div>
+            <div class="half">
+              <h3>List</h3>
+              <figure class="shot shot-groups">
+                <picture>
+                  <source type="image/webp" sizes="(min-width: 48rem) 28rem, calc(115vw - 2.3rem)" media="(prefers-color-scheme: dark)" srcset="assets/img/groups-dark.webp 736w, assets/img/groups-dark@2x.webp 1472w">
+                  <source sizes="(min-width: 48rem) 28rem, calc(115vw - 2.3rem)" media="(prefers-color-scheme: dark)" srcset="assets/img/groups-dark.png 736w, assets/img/groups-dark@2x.png 1472w">
+                  <source type="image/webp" sizes="(min-width: 48rem) 28rem, calc(115vw - 2.3rem)" srcset="assets/img/groups-light.webp 736w, assets/img/groups-light@2x.webp 1472w">
+                  <img sizes="(min-width: 48rem) 28rem, calc(115vw - 2.3rem)" loading="lazy" decoding="async" src="assets/img/groups-light.png" srcset="assets/img/groups-light.png 736w, assets/img/groups-light@2x.png 1472w" width="736" height="520" alt="The contact list with its group menu open: All groups ticked, then Club, Family, Hextech, Hiking and Neighbours, each with its number of contacts.">
+                </picture>
+              </figure>
+              <dl class="feats">
+                <div>
+                  <dt><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Switch books</dt>
+                  <dd>Every address book on your account.</dd>
+                </div>
+                <div>
+                  <dt><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>Search</dt>
+                  <dd>Names, phone numbers, email addresses and organisations.</dd>
+                </div>
+                <div>
+                  <dt><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 3H2l8 9.46V19l4 2v-8.54Z"/></svg>Filter by group</dt>
+                  <dd>Show the contacts of one group.</dd>
+                </div>
+                <div>
+                  <dt><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m3 16 4 4 4-4M7 20V4m14 4-4-4-4 4m4-4v16"/></svg>Sort</dt>
+                  <dd>By first or last name.</dd>
+                </div>
+                <div>
+                  <dt><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M5 21h14"/></svg>Import and export</dt>
+                  <dd>Import a <code>.vcf</code> file with a preview that flags likely duplicates, or export a whole book.</dd>
+                </div>
+              </dl>
+            </div>
           </div>
-          <dl class="directory">
-            <div>
-              <dt><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>Search</dt>
-              <dd>Names, phone numbers, email addresses and organisations.</dd>
-            </div>
-            <div>
-              <dt><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/></svg>Edit</dt>
-              <dd>Create, edit and delete contacts: names, phones, emails, addresses, birthdays, websites and notes.</dd>
-            </div>
-            <div>
-              <dt><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.09-3.09a2 2 0 0 0-2.82 0L6 21"/></svg>Photos</dt>
-              <dd>Add a photo and crop it. Large photos are scaled down.</dd>
-            </div>
-            <div>
-              <dt><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>Groups</dt>
-              <dd>Filter by group and change who is in it, in the group cards Apple and DAVx⁵ use.</dd>
-            </div>
-            <div>
-              <dt><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Address books</dt>
-              <dd>Switch between books and move a contact to another.</dd>
-            </div>
-            <div>
-              <dt><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M5 21h14"/></svg>Import and export</dt>
-              <dd>Import a <code>.vcf</code> file into a book, with a preview that flags likely duplicates, or export a whole book.</dd>
-            </div>
-            <div>
-              <dt><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>iPhone and Android</dt>
-              <dd>Shows what iPhone and DAVx⁵ write: custom labels, birthdays without a year. Photos keep their orientation.</dd>
-            </div>
-            <div>
-              <dt><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20M2 12h20"/></svg>Phone and desktop</dt>
-              <dd>English or French, light or dark, keyboard shortcuts, installable as an app.</dd>
-            </div>
-          </dl>
+          <p class="also"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20M2 12h20"/></svg><span><strong>Phone and desktop.</strong> English or French, light or dark, keyboard shortcuts, installable as an app.</span></p>
         </div>
       </div>
     </section>
