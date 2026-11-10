@@ -189,15 +189,15 @@ code {
   margin: 0.25rem 0 0;
   line-height: 1;
 }
-.wordmark img { width: clamp(12rem, 34vw, 19rem); }
+.wordmark img { width: clamp(8rem, 18vw, 11rem); }
 .headline {
   margin: 0;
-  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-family: var(--font-display);
+  font-size: clamp(2.25rem, 4vw, 3.25rem);
   font-weight: 700;
-  line-height: 1.2;
-  letter-spacing: -0.01em;
+  line-height: 1;
   text-wrap: balance;
-  max-width: 30ch;
+  max-width: 16ch;
 }
 .lede {
   margin: 0;
@@ -228,12 +228,6 @@ code {
 .button.primary:hover { background: transparent; color: var(--on-surface); }
 .button.secondary { color: var(--on-surface); }
 .button.secondary:hover { background: var(--on-surface); color: var(--surface); }
-.hero-note {
-  margin: 0;
-  font-size: 0.9375rem;
-}
-.hero-note a { color: inherit; }
-.actions + .hero-note { margin-top: 0.25rem; }
 
 /* The thumb index of a paper address book, as on the brand images. */
 .tabs { display: none; }
@@ -332,7 +326,7 @@ code {
 @media (min-width: 80rem) {
   .hero .wrap {
     padding-right: calc(5.5rem + 2.5rem);
-    grid-template-columns: 23.5rem minmax(0, 1fr);
+    grid-template-columns: 23.5rem minmax(0, 50rem);
   }
   .shots-figure { max-width: none; }
 }
@@ -340,7 +334,7 @@ code {
 @media (min-width: 90rem) {
   :root { --wrap-max: calc(var(--gutter) + 93rem); }
   .wrap { padding-right: 6.5rem; }
-  .hero .wrap { grid-template-columns: 24rem minmax(0, 1fr); }
+  .hero .wrap { grid-template-columns: 24rem minmax(0, 50rem); }
 }
 
 /* Sections */
@@ -353,7 +347,7 @@ main section + section { border-top: 1px solid var(--rule); }
 h2 {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: clamp(2.25rem, 5vw, 3.5rem);
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
   line-height: 0.95;
   margin: 0 0 1.25rem;
   text-wrap: balance;
@@ -409,11 +403,9 @@ p:last-child { margin-bottom: 0; }
 .shot img { width: 115%; max-width: none; }
 .shot-edit img { margin-left: -9%; }
 .feats { margin: 0; display: grid; gap: 1rem; }
-.feats dt { font-weight: 700; display: flex; gap: 0.5rem; }
-.feats dt .icon { margin-top: 0.2rem; }
-.feats dd { margin: 0.15rem 0 0 1.65rem; }
-.also { display: flex; gap: 0.5rem; margin: 2.5rem 0 0; max-width: var(--measure); }
-.also .icon { margin-top: 0.2rem; }
+.feats dt { font-weight: 700; }
+.feats dd { margin: 0.15rem 0 0; }
+.also { margin: 2.5rem 0 0; }
 
 /* Natel is one more client of the server, beside the devices that already sync. */
 .flow {
@@ -472,6 +464,9 @@ p:last-child { margin-bottom: 0; }
   gap: 0.85rem;
 }
 .trust .icon { margin-top: 0.3rem; }
+@media (min-width: 64rem) {
+  .trust { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem 2.5rem; }
+}
 .trust p { margin: 0; }
 
 /* Self-host */
@@ -675,15 +670,6 @@ pre code { background: none; padding: 0; font-size: inherit; }
   --code-key: #f2aaa4;
 }
 
-.requirement { margin-top: 1rem; }
-
-/* Questions: short answers to what a newcomer asks first. */
-
-.faq { margin: 0; display: grid; max-width: var(--content); }
-.faq > div { padding-block: 0.9rem; border-top: 1px solid var(--rule); }
-.faq > div:first-child { border-top: 0; padding-top: 0; }
-.faq dt { font-weight: 700; margin-bottom: 0.2rem; }
-.faq dd { margin: 0; max-width: var(--measure); }
 
 /* Footer */
 
