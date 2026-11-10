@@ -19,7 +19,7 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="preload" href="assets/fonts/work-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
   <!-- A content hash keeps cached styles aligned with this page. -->
-  <link rel="stylesheet" href="assets/style.css?v=9aa39518109d">
+  <link rel="stylesheet" href="assets/style.css?v=82225f44d7eb">
   <script src="assets/tabs.js?v=3e4f7ae360ea" defer></script>
 
   <!-- Homepage previews use the slogan as the hook and the lead as a factual summary. -->
@@ -108,10 +108,14 @@
         <div class="composition">
           <div class="window cropped">
             <picture>
+              <source width="390" height="806" type="image/webp" sizes="min(22rem, 100vw - 2rem)" media="(max-width: 47.99rem) and (prefers-color-scheme: dark)" srcset="assets/img/mobile-dark.webp 390w, assets/img/mobile-dark@2x.webp 780w">
+              <source width="390" height="806" sizes="min(22rem, 100vw - 2rem)" media="(max-width: 47.99rem) and (prefers-color-scheme: dark)" srcset="assets/img/mobile-dark.png 390w, assets/img/mobile-dark@2x.png 780w">
+              <source width="390" height="806" type="image/webp" sizes="min(22rem, 100vw - 2rem)" media="(max-width: 47.99rem)" srcset="assets/img/mobile-light.webp 390w, assets/img/mobile-light@2x.webp 780w">
+              <source width="390" height="806" sizes="min(22rem, 100vw - 2rem)" media="(max-width: 47.99rem)" srcset="assets/img/mobile-light.png 390w, assets/img/mobile-light@2x.png 780w">
               <source type="image/webp" sizes="(min-width: 90rem) 48rem, (min-width: 72rem) 44rem, (min-width: 48rem) calc(100vw - 10rem), 100vw" media="(prefers-color-scheme: dark)" srcset="assets/img/desktop-dark.webp 1280w, assets/img/desktop-dark@2x.webp 2560w">
               <source sizes="(min-width: 90rem) 48rem, (min-width: 72rem) 44rem, (min-width: 48rem) calc(100vw - 10rem), 100vw" media="(prefers-color-scheme: dark)" srcset="assets/img/desktop-dark.png 1280w, assets/img/desktop-dark@2x.png 2560w">
               <source type="image/webp" sizes="(min-width: 90rem) 48rem, (min-width: 72rem) 44rem, (min-width: 48rem) calc(100vw - 10rem), 100vw" srcset="assets/img/desktop-light.webp 1280w, assets/img/desktop-light@2x.webp 2560w">
-              <img sizes="(min-width: 90rem) 48rem, (min-width: 72rem) 44rem, (min-width: 48rem) calc(100vw - 10rem), 100vw" fetchpriority="high" src="assets/img/desktop-light.png" srcset="assets/img/desktop-light.png 1280w, assets/img/desktop-light@2x.png 2560w" width="1280" height="900" alt="Natel on a desktop screen: the contact list grouped by letter on the left, with a phone number or email on each row, and Caitlyn Kiramman's page on the right, with Call, Text and Email buttons, her phone, email, birthday and group.">
+              <img sizes="(min-width: 90rem) 48rem, (min-width: 72rem) 44rem, (min-width: 48rem) calc(100vw - 10rem), 100vw" fetchpriority="high" src="assets/img/desktop-light.png" srcset="assets/img/desktop-light.png 1280w, assets/img/desktop-light@2x.png 2560w" width="1280" height="900" alt="Natel's contact list, grouped by letter, with a phone number or email on each row. On a desktop screen, Caitlyn Kiramman's page sits beside it, with Call, Text and Email buttons, her phone, email, birthday and group.">
             </picture>
           </div>
           <div class="phone">
@@ -173,7 +177,7 @@
                 <div><dt><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/></svg>Details</dt><dd>Names, phones, emails, addresses, websites, birthdays and notes.</dd></div>
                 <div><dt><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>iPhone and Android</dt><dd>Keeps what iPhone and DAVx⁵ write: custom labels, birthdays without a year.</dd></div>
                 <div><dt><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>Groups</dt><dd>Add it to a group or take it out, in the group cards Apple and DAVx⁵ use.</dd></div>
-                <div><dt><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>Another book</dt><dd>Move it there without exporting and importing it again.</dd></div>
+                <div><dt><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>Move to another book</dt><dd>Move it there without exporting and importing it again.</dd></div>
               </dl>
             </div>
             <div class="half">
@@ -248,7 +252,7 @@
               <span class="stat-label">RAM at idle</span>
             </li>
           </ul>
-          <p class="note">Measured on linux/amd64, 15 October 2026.</p>
+          <p class="note">Natel 0.5.1, measured on linux/amd64, 11 November 2026.</p>
 
           <div class="install" data-tabs>
             <div class="tablist" data-tablist hidden></div>

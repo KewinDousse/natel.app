@@ -267,11 +267,12 @@ code {
   .skip { right: calc(var(--gutter) + 5.5rem); }
 }
 
-/* Screenshots, in the hero. The desktop window always shows, since Natel is
-   used from a computer: a phone alone would read as a rival to the phone's
-   own contacts app. The phone joins it where there is room. Where the whole
-   window would shrink too far, it shows its left part, the list and the start
-   of a contact's page. */
+/* Screenshots, in the hero. The desktop window shows from 48rem, since
+   Natel is used from a computer: a phone alone would read as a rival to the
+   phone's own contacts app. It shows whole, cropped only at the bottom where
+   it sits beside the text, and the phone joins it where there is room. Under
+   48rem the window would shrink too far to read, so the phone's list takes
+   its place. */
 
 .hero .wrap {
   padding-block: clamp(2rem, 4vw, 3.5rem);
@@ -286,8 +287,6 @@ code {
   background: var(--paper);
 }
 .window img, .phone img { width: 100%; }
-.window.cropped { aspect-ratio: 980 / 700; }
-.window.cropped img { width: calc(100% * 1280 / 980); max-width: none; }
 .phone {
   display: none;
   aspect-ratio: 390 / 744;
@@ -307,7 +306,13 @@ code {
     padding-bottom: 4.5rem;
   }
   .shots-figure { margin-top: -4rem; }
-  .window { outline: 1px solid var(--rule); }
+  .window {
+    max-width: 22rem;
+    margin-inline: auto;
+    aspect-ratio: 390 / 640;
+    outline: 1px solid var(--rule);
+  }
+  .window img { height: 100%; object-fit: cover; object-position: top; }
 }
 
 @media (max-width: 23.99rem) {
@@ -316,8 +321,6 @@ code {
 
 /* Tablets: a compact window below the text, with the phone at its lower right. */
 @media (min-width: 48rem) and (max-width: 63.99rem) {
-  .window.cropped { aspect-ratio: auto; }
-  .window.cropped img { width: 100%; }
   .composition { max-width: 40rem; margin-inline: auto; }
   .window { width: calc(100% - 4rem); }
   .phone {
@@ -336,13 +339,16 @@ code {
   }
 }
 
-/* Wide screens: the text beside the window's left part. */
+/* Wide screens: the text beside the window, whose bottom rows give way so
+   it stays about as tall as the text. */
 @media (min-width: 64rem) and (max-width: 89.99rem) {
   .hero .wrap {
     grid-template-columns: 23.5rem minmax(0, 1fr);
     align-items: center;
     column-gap: 2.5rem;
   }
+  .window.cropped { aspect-ratio: 1280 / 720; }
+  .window.cropped img { height: 100%; object-fit: cover; object-position: top; }
 }
 
 @media (min-width: 64rem) and (max-width: 71.99rem) {
@@ -368,8 +374,6 @@ code {
     align-items: center;
     column-gap: 2.5rem;
   }
-  .window.cropped { aspect-ratio: auto; }
-  .window.cropped img { width: 100%; }
   /* Keep controls visible and reserve room down to the phone's bottom. */
   .shots-figure { min-height: calc(9.5rem + 15rem * 744 / 390); }
   .window { width: calc(100% - 13.2rem); }
@@ -453,7 +457,7 @@ p:last-child { margin-bottom: 0; }
 .also { margin: 2.5rem 0 0; }
 
 /* What Natel needs and what it leaves out, side by side once there is room. */
-.needs { margin: 0; display: grid; gap: 1rem; max-width: var(--measure); }
+.needs { margin: 0; display: grid; gap: 1rem; }
 @media (min-width: 48rem) { .needs { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem; } }
 .needs dt { font-weight: 700; }
 .needs dd { margin: 0.15rem 0 0; color: var(--muted); font-size: 0.9375rem; }
@@ -465,7 +469,6 @@ p:last-child { margin-bottom: 0; }
   --line: color-mix(in srgb, var(--ink) 30%, var(--rule));
   margin: 1.5rem 0;
   display: grid;
-  max-width: var(--measure);
 }
 .flow .node {
   position: relative;
@@ -507,7 +510,6 @@ p:last-child { margin-bottom: 0; }
   padding: 0;
   display: grid;
   gap: 1rem;
-  max-width: var(--measure);
 }
 .group + .trust { margin-top: 1rem; }
 .trust + .group { margin-top: 2.5rem; }
@@ -551,7 +553,7 @@ p:last-child { margin-bottom: 0; }
 .technology img { align-self: center; width: 1.2rem; height: 1.2rem; object-fit: contain; }
 .technology .go-logo { width: 1.75rem; }
 
-.install { margin-top: 1.75rem; max-width: 50rem; }
+.install { margin-top: 1.75rem; }
 .panel + .panel { margin-top: 2rem; }
 .panel-title { margin-bottom: 0.5rem; }
 .panel p { margin: 0.75rem 0 0; }
@@ -589,7 +591,7 @@ p:last-child { margin-bottom: 0; }
 
 .callout {
   margin: 1.5rem 0 0;
-  max-width: 50rem;
+  max-width: none;
   padding: 0.9rem 1rem;
   border: 1px solid color-mix(in srgb, var(--warning) 40%, transparent);
   background: color-mix(in srgb, var(--warning) 5%, transparent);
@@ -599,7 +601,6 @@ p:last-child { margin-bottom: 0; }
 
 pre {
   margin: 0.6rem 0 0;
-  max-width: 50rem;
   padding: 0.9rem 1rem;
   background: var(--wash);
   border: 1px solid var(--rule);
@@ -619,7 +620,6 @@ pre code { background: none; padding: 0; font-size: inherit; }
   --code-key: #a33f3a;
   position: relative;
   margin-top: 0.6rem;
-  max-width: 50rem;
   border: 1px solid var(--rule);
   border-radius: var(--radius);
   overflow: hidden;
@@ -743,7 +743,14 @@ footer .brandline {
   gap: 0.75rem;
   flex: 1 1 24rem;
 }
-footer .brandline img { width: 2rem; height: 2rem; flex: none; }
+/* The mark's white card would vanish into the light footer. */
+footer .brandline img {
+  width: 2rem;
+  height: 2rem;
+  flex: none;
+  border-radius: 0.45rem;
+  box-shadow: 0 0 0 1px var(--rule);
+}
 footer .repo-link {
   display: inline-flex;
   align-items: center;

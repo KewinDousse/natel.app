@@ -29,16 +29,18 @@ python3 -m http.server 8000 --bind 127.0.0.1
   with Caitlyn Kiramman's page open and the phone at 390×806 on the list,
   for the hero, and two screens at 736×520 for "What it does", Luxanna
   Crownguard's form and the list with its group menu open. The hero
-  always shows the desktop, cropped to its left part where it would shrink
-  too far, and adds the phone where there is room. In the main
+  shows the whole desktop from 48rem, cropped at the bottom beside the
+  text, and adds the phone where there is room. Under 48rem, the phone's
+  list takes its place. In the main
   repository, `pnpm brand:images --site ../natel.app/assets/img` renders
   them and copies the `og:image`.
 
 ## Measured figures
 
 The image size and RAM figures in "Run it" come from the "Build" section of
-`docs/ARCHITECTURE.md` in KewinDousse/natel, measured on 2026-10-15. Update
-them here whenever that section has a new measurement.
+`docs/ARCHITECTURE.md` in KewinDousse/natel. The note under them gives the
+version and date of the measurement, 0.5.1 on 2026-11-11. Update both
+whenever that section has a new measurement.
 
 ## Version
 
