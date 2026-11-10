@@ -19,7 +19,7 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="preload" href="assets/fonts/work-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
   <!-- A content hash keeps cached styles aligned with this page. -->
-  <link rel="stylesheet" href="assets/style.css?v=f5e8153e0ba1">
+  <link rel="stylesheet" href="assets/style.css?v=fe6c20417c9c">
   <script src="assets/tabs.js?v=3e4f7ae360ea" defer></script>
 
   <!-- Homepage previews use the slogan as the hook and the lead as a factual summary. -->
@@ -234,25 +234,32 @@
       <div class="wrap">
         <h2 id="data-title">Your data</h2>
         <div class="section-body">
+          <h3 class="group">Your contacts</h3>
           <ul class="trust">
             <li>
               <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4M8 13h8M8 17h5"/></svg>
-              <p><strong>Fields it doesn't edit are kept.</strong> Properties, parameters and groups the editor doesn't show are written back on save. Round-trip tests cover this.</p>
+              <p><strong>Nothing it doesn't show is lost.</strong> Fields Natel doesn't edit are written back as they were. Round-trip tests check this.</p>
             </li>
             <li>
               <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a9 9 0 1 1-2.64-6.36L21 8M21 3v5h-5"/></svg>
-              <p><strong>Changes from other devices aren't overwritten.</strong> If a contact changed on your phone after Natel read it, saving shows a conflict instead of replacing it.</p>
+              <p><strong>Your phone's changes are safe.</strong> If a contact changed elsewhere after Natel read it, you see a conflict, not an overwrite.</p>
             </li>
             <li>
               <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
-              <p><strong>Tested against real servers.</strong> The end-to-end suite runs in CI against Baïkal, Radicale, Xandikos and Nextcloud. Other servers aren't in it, and SOGo has a known bug with deletes: see <a href="https://github.com/KewinDousse/natel/blob/main/docs/compatibility.md">compatibility</a>.</p>
-            </li>
-            <li>
-              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
-              <p><strong>Your password stays off disk.</strong> Natel checks it against your server and keeps it in memory for the session, up to 7 days. Your browser only holds a session cookie that page scripts can't read.</p>
+              <p><strong>Tested on real servers.</strong> Baïkal, Radicale, Xandikos and Nextcloud, in CI. SOGo has a known bug with deletes: see <a href="https://github.com/KewinDousse/natel/blob/main/docs/compatibility.md">compatibility</a>.</p>
             </li>
           </ul>
-          <p class="after note"><strong>No analytics.</strong> Your server only checks for new releases. You can <a href="https://github.com/KewinDousse/natel/blob/main/docs/deployment.md#update-checks">turn this off</a>.</p>
+          <h3 class="group">Your password and privacy</h3>
+          <ul class="trust">
+            <li>
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+              <p><strong>Your password stays off disk.</strong> It's kept in memory for the session, up to 7 days. Your browser only holds a cookie page scripts can't read.</p>
+            </li>
+            <li>
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/><path d="m3 3 18 18"/></svg>
+              <p><strong>No analytics.</strong> Your server only checks for new releases. You can <a href="https://github.com/KewinDousse/natel/blob/main/docs/deployment.md#update-checks">turn this off</a>.</p>
+            </li>
+          </ul>
         </div>
       </div>
     </section>
