@@ -453,6 +453,12 @@ p:last-child { margin-bottom: 0; }
 .feats dd { margin: 0.15rem 0 0; }
 .also { margin: 2.5rem 0 0; }
 
+/* What Natel needs and what it leaves out, side by side once there is room. */
+.needs { margin: 0; display: grid; gap: 1rem; max-width: var(--measure); }
+@media (min-width: 48rem) { .needs { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem; } }
+.needs dt { font-weight: 700; }
+.needs dd { margin: 0.15rem 0 0; color: var(--muted); font-size: 0.9375rem; }
+
 /* Natel is one more client of the server, beside the devices that already sync. */
 .flow {
   --stub: 1rem;
