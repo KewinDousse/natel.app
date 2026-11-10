@@ -27,8 +27,8 @@ python3 -m http.server 8000 --bind 127.0.0.1
   `docs/brand/`. The screenshots come from the demo build, without its
   demo reminders, in light and dark, at 1x and 2x: the desktop at 1280×900
   with Caitlyn Kiramman's page open and the phone at 390×806 on the list,
-  for the hero, and two gestures at 736×520 for "What it does", a `.vcf`
-  file dragged over the window and Luxanna Crownguard's form. The hero
+  for the hero, and two screens at 736×520 for "What it does", Luxanna
+  Crownguard's form and the list with its group menu open. The hero
   always shows the desktop, cropped to its left part where it would shrink
   too far, and adds the phone where there is room. In the main
   repository, `pnpm brand:images --site ../natel.app/assets/img` renders
@@ -55,13 +55,13 @@ own license.
 
 The website serves lossless WebP screenshots, with width-based sources. The
 phone overlay loads lazily so it is not fetched when its layout is hidden, and
-the gestures load lazily, below the fold. The Open Graph image remains PNG for
-link previews.
+the "What it does" screens load lazily, below the fold. The Open Graph image
+remains PNG for link previews.
 
 After generating PNG screenshots with `pnpm brand:images --site
 ../natel.app/assets/img` in the application repository, run
 `sh scripts/encode-screenshots.sh` here. The script requires `cwebp`, converts
 all sixteen screenshots losslessly and keeps the PNG sources as explicit browser
-fallbacks. Refresh the desktop, the phone and both gestures, light and dark,
-together.
+fallbacks. Refresh the desktop, the phone and both "What it does" screens,
+light and dark, together.
 There is no deployment build step.
