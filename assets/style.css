@@ -435,21 +435,20 @@ p:last-child { margin-bottom: 0; }
 .duo { display: grid; gap: 3rem; }
 @media (min-width: 48rem) { .duo { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2.5rem; } }
 .half { display: grid; align-content: start; gap: 1.25rem; min-width: 0; }
-.half h3 { font-family: var(--font-display); font-size: 1.5rem; line-height: 1; margin: 0; }
-/* Each shot is cropped to the part its column talks about, so it stays readable at half width. */
+.group { font-family: var(--font-display); font-size: 1.5rem; line-height: 1; margin: 0; }
 .shot {
   margin: 0;
-  aspect-ratio: 4 / 3;
   overflow: hidden;
   border: 1px solid var(--rule);
   border-radius: var(--radius);
   box-shadow: 0 0.75rem 1.75rem rgb(0 0 0 / 0.18);
 }
-.shot img { width: 115%; max-width: none; }
-.shot-edit img { margin-left: -9%; }
+.shot img { width: 100%; }
 .feats { margin: 0; display: grid; gap: 1rem; }
-.feats dt { font-weight: 700; }
-.feats dd { margin: 0.15rem 0 0; }
+.feats > div { display: grid; grid-template-columns: 1.15rem minmax(0, 1fr); column-gap: 0.65rem; }
+.feats dt { font-weight: 700; display: contents; }
+.feats dt .icon { grid-row: span 2; margin-top: 0.2rem; }
+.feats dd { margin: 0.1rem 0 0; grid-column: 2; }
 .also { margin: 2.5rem 0 0; }
 
 /* What Natel needs and what it leaves out, side by side once there is room. */
@@ -509,7 +508,6 @@ p:last-child { margin-bottom: 0; }
   gap: 1rem;
   max-width: var(--measure);
 }
-.group { font-family: var(--font-display); font-size: 1.5rem; line-height: 1; margin: 0; }
 .group + .trust { margin-top: 1rem; }
 .trust + .group { margin-top: 2.5rem; }
 .trust li {
