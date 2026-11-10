@@ -4,7 +4,7 @@ set -eu
 root=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
 images="$root/assets/img"
 
-for device in desktop phone groups edit; do
+for device in desktop mobile groups edit; do
   for theme in light dark; do
     for scale in '' '@2x'; do
       test -f "$images/$device-$theme$scale.png"
@@ -12,7 +12,7 @@ for device in desktop phone groups edit; do
   done
 done
 
-for device in desktop phone groups edit; do
+for device in desktop mobile groups edit; do
   for theme in light dark; do
     for scale in '' '@2x'; do
       cwebp -quiet -lossless -exact "$images/$device-$theme$scale.png" -o "$images/$device-$theme$scale.webp"

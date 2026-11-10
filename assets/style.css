@@ -52,8 +52,6 @@
   --font-mono: ui-monospace, "SF Mono", "Cascadia Mono", Menlo, Consolas, monospace;
   --measure: 66ch;
   --page: 76rem;
-  /* The page's width, the hero's text keeping the sections' left edge. */
-  --wrap-max: var(--page);
   --content: 58rem;
   --gutter: max(16px, 4vw);
   --radius-small: 4px;
@@ -165,7 +163,7 @@ code {
 .skip:focus { top: 0.5rem; }
 
 .wrap {
-  max-width: var(--wrap-max);
+  max-width: var(--page);
   margin-inline: auto;
   padding-inline: var(--gutter);
 }
@@ -181,23 +179,31 @@ code {
 .hero :focus-visible { outline-color: var(--on-surface); }
 .hero-text {
   display: grid;
-  gap: 1rem;
+  gap: 1.25rem;
   max-width: 44rem;
   align-content: start;
 }
+.brand { display: flex; align-items: center; gap: 0.75rem; }
+.mark {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: var(--radius-large);
+  /* White keyline so the band stays visible on red (brand kit rule). */
+  box-shadow: 0 0 0 2px var(--on-surface);
+}
 .wordmark {
-  margin: 0.25rem 0 0;
+  margin: 0;
   line-height: 1;
 }
-.wordmark img { width: clamp(8rem, 18vw, 11rem); }
+.wordmark img { width: clamp(7rem, 12vw, 8.5rem); }
 .headline {
   margin: 0;
-  font-family: var(--font-display);
-  font-size: clamp(2.25rem, 4vw, 3.25rem);
+  font-size: clamp(1.875rem, 3.4vw, 2.625rem);
   font-weight: 700;
-  line-height: 1;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
   text-wrap: balance;
-  max-width: 16ch;
+  max-width: 18ch;
 }
 .lede {
   margin: 0;
@@ -262,27 +268,37 @@ code {
   .skip { right: calc(var(--gutter) + 5.5rem); }
 }
 
-/* Screenshots, in the hero. The desktop window shows whole, since Natel is
+/* Screenshots, in the hero. The desktop window always shows, since Natel is
    used from a computer: a phone alone would read as a rival to the phone's
-   own contacts app. Under 48rem, where that window would shrink too far to
-   read, the phone's list takes its place. */
+   own contacts app. The phone joins it where there is room. Where the whole
+   window would shrink too far, it shows its left part, the list and the start
+   of a contact's page. */
 
 .hero .wrap {
   padding-block: clamp(2rem, 4vw, 3.5rem);
   display: grid;
   gap: 2.5rem;
 }
-.shots-figure { position: relative; margin: 0; }
+.shots-figure { margin: 0; }
+.composition { position: relative; }
 .window {
   border-radius: var(--radius-large);
   overflow: hidden;
   background: var(--paper);
-  box-shadow: 0 1.5rem 3rem rgb(0 0 0 / 0.28);
 }
-.window img { width: 100%; max-width: none; }
+.window img, .phone img { width: 100%; }
+.window.cropped { aspect-ratio: 980 / 700; }
+.window.cropped img { width: calc(100% * 1280 / 980); max-width: none; }
+.phone {
+  display: none;
+  aspect-ratio: 390 / 744;
+  overflow: hidden;
+  border-radius: var(--radius-large);
+  box-shadow: 0 0 0 6px var(--surface);
+}
 
-/* Phones: the red ends under the buttons and the list sits on white,
-   overlapping the band's edge a little, then fades out as it would scroll. */
+/* Phones: the red ends under the buttons and the shot sits on white,
+   overlapping the band's edge a little. */
 @media (max-width: 47.99rem) {
   .hero { background: var(--paper); }
   .hero-text {
@@ -292,49 +308,79 @@ code {
     padding-bottom: 4.5rem;
   }
   .shots-figure { margin-top: -4rem; }
-  .window {
-    aspect-ratio: 390 / 560;
-    box-shadow: none;
-    -webkit-mask-image: linear-gradient(#000 70%, transparent);
-    mask-image: linear-gradient(#000 70%, transparent);
-  }
-  .window img { height: 100%; object-fit: cover; object-position: top; }
+  .window { outline: 1px solid var(--rule); }
 }
 
 @media (max-width: 23.99rem) {
   .actions .button { width: 100%; justify-content: center; }
 }
 
+/* Tablets: a compact window below the text, with the phone at its lower right. */
 @media (min-width: 48rem) and (max-width: 63.99rem) {
-  .shots-figure { width: 100%; max-width: 40rem; margin-inline: auto; }
+  .window.cropped { aspect-ratio: auto; }
+  .window.cropped img { width: 100%; }
+  .composition { max-width: 40rem; margin-inline: auto; }
+  .window { width: calc(100% - 4rem); }
+  .phone {
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: -1.5rem;
+    width: 11rem;
+  }
+  .shots-figure { padding-bottom: 1.5rem; }
 }
 
-/* Wide screens: the window beside the text, clear of the tabs, so a light
-   window doesn't run into the white tab. */
 @media (min-width: 64rem) {
+  .headline {
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* Wide screens: the text beside the window's left part. */
+@media (min-width: 64rem) and (max-width: 89.99rem) {
   .hero .wrap {
-    max-width: none;
-    padding: 3rem 5.5rem 3rem calc(max(0px, (100% - var(--wrap-max)) / 2) + var(--gutter));
-    grid-template-columns: minmax(0, 1fr);
+    grid-template-columns: 23.5rem minmax(0, 1fr);
     align-items: center;
+    column-gap: 2.5rem;
   }
-  .headline { margin-bottom: 0.5rem; }
-  .shots-figure { max-width: 52rem; }
 }
 
-/* From 80rem the window fits beside the text, at a size that reads. */
-@media (min-width: 80rem) {
+@media (min-width: 64rem) and (max-width: 71.99rem) {
   .hero .wrap {
-    padding-right: calc(5.5rem + 2.5rem);
-    grid-template-columns: 23.5rem minmax(0, 50rem);
+    grid-template-columns: 22rem minmax(0, 1fr);
+    column-gap: 1.5rem;
   }
-  .shots-figure { max-width: none; }
+  .actions .button {
+    padding-inline: 1.2rem;
+  }
 }
 
+/* From 90rem the composition takes everything right of a 24rem text
+   column, up to 2rem short of the tabs, capped at 60rem. */
 @media (min-width: 90rem) {
-  :root { --wrap-max: calc(var(--gutter) + 93rem); }
-  .wrap { padding-right: 6.5rem; }
-  .hero .wrap { grid-template-columns: 24rem minmax(0, 50rem); }
+  .headline { font-size: 2.5rem; }
+  .wrap {
+    max-width: calc(var(--gutter) + 86.5rem + 6.5rem);
+    padding-right: 6.5rem;
+  }
+  .hero .wrap {
+    grid-template-columns: 24rem minmax(0, 60rem);
+    align-items: center;
+    column-gap: 2.5rem;
+  }
+  .window.cropped { aspect-ratio: auto; }
+  .window.cropped img { width: 100%; }
+  /* Keep controls visible and reserve room down to the phone's bottom. */
+  .shots-figure { min-height: calc(9.5rem + 15rem * 744 / 390); }
+  .window { width: calc(100% - 13.2rem); }
+  .phone {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 9.5rem;
+    width: 15rem;
+  }
 }
 
 /* Sections */
