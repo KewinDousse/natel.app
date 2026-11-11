@@ -267,12 +267,10 @@ code {
   .skip { right: calc(var(--gutter) + 5.5rem); }
 }
 
-/* Screenshots, in the hero. The desktop window shows from 48rem, since
-   Natel is used from a computer: a phone alone would read as a rival to the
-   phone's own contacts app. It shows whole, cropped only at the bottom where
-   it sits beside the text, and the phone joins it where there is room. Under
-   48rem the window would shrink too far to read, so the phone's list takes
-   its place. */
+/* Screenshots, in the hero. The desktop window always shows, since Natel is
+   used from a computer: a phone alone would read as a rival to the phone's
+   own contacts app. It shows whole, cropped only at the bottom on phones and
+   where it sits beside the text, and the phone joins it where there is room. */
 
 .hero .wrap {
   padding-block: clamp(2rem, 4vw, 3.5rem);
@@ -306,13 +304,9 @@ code {
     padding-bottom: 4.5rem;
   }
   .shots-figure { margin-top: -4rem; }
-  .window {
-    max-width: 22rem;
-    margin-inline: auto;
-    aspect-ratio: 390 / 640;
-    outline: 1px solid var(--rule);
-  }
-  .window img { height: 100%; object-fit: cover; object-position: top; }
+  .window { outline: 1px solid var(--rule); }
+  .window.cropped { aspect-ratio: 1280 / 720; }
+  .window.cropped img { height: 100%; object-fit: cover; object-position: top; }
 }
 
 @media (max-width: 23.99rem) {

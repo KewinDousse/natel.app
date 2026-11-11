@@ -29,9 +29,8 @@ python3 -m http.server 8000 --bind 127.0.0.1
   with Caitlyn Kiramman's page open and the phone at 390×806 on the list,
   for the hero, and two screens at 736×520 for "What it does", Luxanna
   Crownguard's form and the list with its group menu open. The hero
-  shows the whole desktop from 48rem, cropped at the bottom beside the
-  text, and adds the phone where there is room. Under 48rem, the phone's
-  list takes its place. In the main
+  always shows the whole desktop, cropped at the bottom on phones and
+  beside the text, and adds the phone where there is room. In the main
   repository, `pnpm brand:images --site ../natel.app/assets/img` renders
   them and copies the `og:image`.
 
