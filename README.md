@@ -36,10 +36,10 @@ python3 -m http.server 8000 --bind 127.0.0.1
 
 ## Measured figures
 
-The image size and RAM figures in "Run it" come from the "Build" section of
+The image size and RAM figures in "Self-host" come from the "Build" section of
 `docs/ARCHITECTURE.md` in KewinDousse/natel. The note under them gives the
-version and date of the measurement, 0.5.1 on 2026-11-11. Update both
-whenever that section has a new measurement.
+platform and date of the measurement. Update both whenever that section
+has a new measurement.
 
 ## Version
 
