@@ -12,6 +12,7 @@ reload.
 - [Overview](https://natel.app/): Features, data handling and self-hosting instructions.
 - [Source and README](https://github.com/KewinDousse/natel): Source code, requirements and quick start.
 - [Demo](https://demo.natel.app/contacts): Try the editor with made-up contacts.
+- [With Baïkal](https://natel.app/baikal/): Setup and tested behaviour with a Baïkal server.
 
 ## Documentation
 

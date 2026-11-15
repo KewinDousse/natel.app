@@ -11,8 +11,7 @@ does not prove access from the real crawler's IP addresses.
 
 ## Sitemap entries
 
-Add an absolute canonical URL when a new indexable page is published. This branch
-lists only the homepage because the other proposed pages live on separate branches.
+Add an absolute canonical URL when a new indexable page is published.
 Do not list demo contact routes, fragments, unpublished pages or files under `docs/`.
 Use a `lastmod` only when it represents a real content update.
 

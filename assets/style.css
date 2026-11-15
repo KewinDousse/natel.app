@@ -209,6 +209,12 @@ code {
   max-width: 46ch;
   font-size: 1.125rem;
 }
+.tested {
+  margin: 0;
+  max-width: 46ch;
+  font-size: 0.9375rem;
+}
+.tested a { color: inherit; }
 .actions {
   display: flex;
   flex-wrap: wrap;
